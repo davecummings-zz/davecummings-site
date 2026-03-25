@@ -16,7 +16,7 @@
         
         :root {
             /* Primary */
-            --midnight: #0F172A;
+            --midnight: #003A5D;
             --slate: #475569;
             --pearl: #F8FAFC;
             
@@ -97,6 +97,16 @@
             color: var(--red-orange);
         }
         
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 32px;
+            color: var(--midnight);
+            cursor: pointer;
+            padding: 8px;
+        }
+        
         .nav-cta {
             background: var(--red-orange);
             color: white;
@@ -118,14 +128,21 @@
         /* Hero */
         .hero {
             padding: 220px 48px 160px;
-            max-width: 1400px;
+            max-width: 100%;
             margin: 0 auto;
+            background: #003A5D;
+        }
+        
+        .hero > * {
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .hero-label {
             display: inline-block;
-            background: rgba(229, 41, 3, 0.1);
-            color: var(--red-orange);
+            background: rgba(255, 255, 255, 0.15);
+            color: var(--white);
             padding: 10px 20px;
             border-radius: 24px;
             font-size: 15px;
@@ -140,6 +157,7 @@
             margin-bottom: 32px;
             max-width: 1100px;
             letter-spacing: -2px;
+            color: var(--white);
         }
         
         .hero h1 .highlight {
@@ -148,7 +166,7 @@
         
         .hero p {
             font-size: 26px;
-            color: var(--slate);
+            color: rgba(255, 255, 255, 0.9);
             margin-bottom: 56px;
             max-width: 800px;
             line-height: 1.5;
@@ -351,7 +369,7 @@
             grid-template-columns: 2fr 1fr 1fr;
             gap: 80px;
             padding-bottom: 56px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
         }
         
         .footer-logo h3 {
@@ -407,11 +425,73 @@
         
         .footer-bottom p {
             font-size: 15px;
-            color: var(--slate);
+            color: rgba(255, 255, 255, 0.85);
         }
         
         /* Responsive */
         @media (max-width: 768px) {
+            header {
+                padding: 16px 24px;
+            }
+            
+            nav {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+            
+            .logo {
+                font-size: 28px;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                gap: 0;
+                width: 100%;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+                border-top: 1px solid var(--gray-300);
+                padding: 0;
+            }
+            
+            nav ul.active {
+                display: flex;
+            }
+            
+            nav ul li {
+                width: 100%;
+                border-bottom: 1px solid var(--gray-300);
+            }
+            
+            nav ul li:last-child {
+                border-bottom: none;
+            }
+            
+            nav a {
+                display: block;
+                text-align: center;
+                padding: 20px;
+            }
+            
+            .nav-cta {
+                width: 100%;
+                border-radius: 0;
+                box-shadow: none;
+            }
+            
+            .hero {
+                padding: 140px 24px 80px;
+            }
+            
             .hero h1 {
                 font-size: 52px;
             }
@@ -420,8 +500,16 @@
                 font-size: 20px;
             }
             
+            .services {
+                padding: 80px 24px;
+            }
+            
             .services-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .process {
+                padding: 80px 24px;
             }
             
             .process-grid {
@@ -439,8 +527,9 @@
     <!-- Header -->
     <header>
         <nav>
-            <a href="/" class="logo">Dave<span>.</span></a>
-            <ul>
+            <a href="/" class="logo">Dave Cummings<span>.</span></a>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul id="nav-menu">
                 <li><a href="#services">Services</a></li>
                 <li><a href="#process">Process</a></li>
                 <li><a href="#contact" class="nav-cta">Get Started</a></li>
@@ -458,7 +547,7 @@
 
     <!-- Services -->
     <section class="services" id="services">
-        <h2>How I Help</h2>
+        <h2>How I Can Help</h2>
         <div class="services-grid">
             <div class="service-card">
                 <h3>Quick Wins Package</h3>
@@ -558,5 +647,30 @@
             <p>&copy; 2026 Dave Cummings. All rights reserved.</p>
         </div>
     </footer>
+    
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close menu when clicking a link
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('nav')) {
+                navMenu.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>
