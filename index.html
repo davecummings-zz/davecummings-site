@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dave Cummings - Website Consultant | Performance, SEO & Visibility</title>
-    <meta name="description" content="I build fully optimized websites that work — and fix the ones that don't. 16 years of ecommerce expertise. Performance optimization, SEO, and results-driven consulting.">
+    <meta name="description" content="I build fully optimized websites that work — and fix the ones that don't. 16 years of development expertise. Performance optimization, SEO, and results-driven consulting.">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://davecummings.com/">
     <meta property="og:title" content="Dave Cummings - Website Consultant">
-    <meta property="og:description" content="I build fully optimized websites that work — and fix the ones that don't. 16 years of ecommerce expertise.">
+    <meta property="og:description" content="I build fully optimized websites that work — and fix the ones that don't. 16 years of development expertise.">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://davecummings.com/">
     <meta property="twitter:title" content="Dave Cummings - Website Consultant">
-    <meta property="twitter:description" content="I build fully optimized websites that work — and fix the ones that don't. 16 years of ecommerce expertise.">
+    <meta property="twitter:description" content="I build fully optimized websites that work — and fix the ones that don't. 16 years of development expertise.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,7 +35,7 @@
             --pearl: #F8FAFC;
             
             /* Accents */
-            --red-orange: #E52903;
+            --red-orange: #e20f2e;
             
             /* Neutrals */
             --white: #FFFFFF;
@@ -145,6 +145,32 @@
             max-width: 100%;
             margin: 0 auto;
             background: #003A5D;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(226, 15, 46, 0.3) 0%, transparent 60%);
+            border-radius: 50%;
+            top: -250px;
+            right: -150px;
+            z-index: 1;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 107, 53, 0.25) 0%, transparent 60%);
+            border-radius: 50%;
+            bottom: -200px;
+            left: -150px;
+            z-index: 1;
         }
         
         .hero > * {
@@ -152,6 +178,8 @@
             margin-left: auto;
             margin-right: auto;
             text-align: left;
+            position: relative;
+            z-index: 10;
         }
         
         .hero-label {
@@ -212,7 +240,7 @@
         .hero-cta:hover {
             background: #C72203;
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(229, 41, 3, 0.4);
+            box-shadow: 0 6px 16px rgba(229, 41, 3, 0.3);
         }
         
         /* Services Grid */
@@ -244,9 +272,26 @@
         }
         
         .service-card:hover {
-            border-color: var(--red-orange);
+            border-color: #003A5D;
             transform: translateY(-6px);
             box-shadow: 0 16px 32px rgba(15, 23, 42, 0.12);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 32px;
+            background: linear-gradient(135deg, var(--red-orange), #FF6B35);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 16px rgba(226, 15, 46, 0.25);
+        }
+        
+        .service-icon svg {
+            width: 44px;
+            height: 44px;
         }
         
         .service-card h3 {
@@ -275,6 +320,37 @@
             font-size: 16px;
             color: var(--slate);
             font-weight: 500;
+        }
+        
+        .service-button {
+            display: inline-block;
+            background: var(--red-orange);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 17px;
+            margin-top: 24px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--red-orange);
+        }
+        
+        .service-button:hover {
+            background: #C72203;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(229, 41, 3, 0.3);
+        }
+        
+        .service-button.secondary {
+            background: white;
+            color: var(--red-orange);
+            border: 2px solid var(--red-orange);
+        }
+        
+        .service-button.secondary:hover {
+            background: var(--red-orange);
+            color: white;
         }
         
         /* Process Section */
@@ -373,7 +449,7 @@
         }
         
         .cta-button:hover {
-            background: #FF4500;
+            background: #C72203;
             transform: translateY(-3px);
             box-shadow: 0 10px 30px rgba(229, 41, 3, 0.5);
         }
@@ -550,7 +626,7 @@
     <!-- Header -->
     <header>
         <nav>
-            <a href="/" class="logo">Dave Cummings<span>.</span></a>
+            <a href="/" class="logo">Dave<span>.</span></a>
             <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
             <ul id="nav-menu">
                 <li><a href="#services">Services</a></li>
@@ -562,9 +638,9 @@
 
     <!-- Hero -->
     <section class="hero">
-        <div class="hero-label">Website Consultant | Performance, SEO & Visibility</div>
+        <div class="hero-label">Web Consultant | Performance, SEO & Visibility</div>
         <h1>I build <span class="highlight">fully optimized websites</span> that work — and fix the ones that don't.</h1>
-        <p>I use modern tools and AI to identify issues, then apply 16 years of ecommerce expertise to build, fix, and optimize what actually moves the needle.</p>
+        <p>I use modern tools and AI to identify issues, then apply 16 years of development expertise to build, fix, and optimize what actually moves the needle.</p>
         <a href="#contact" class="hero-cta">Get Your Free Website Review</a>
     </section>
 
@@ -573,31 +649,59 @@
         <h2>How I Can Help</h2>
         <div class="services-grid">
             <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="white"/>
+                    </svg>
+                </div>
                 <h3>Quick Wins Package</h3>
                 <p>Fix the top 5 issues killing your site's performance and rankings. Meta descriptions, caching, image optimization, schema markup, Google reviews.</p>
                 <div class="service-price">$950</div>
                 <div class="service-detail">Delivered in 1 week</div>
+                <a href="https://buy.stripe.com/cNi6oJ7812YabITfVnf7i00" class="service-button">Get Started</a>
             </div>
             
             <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 11l3 3L22 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
                 <h3>Full Website Audit & Optimization</h3>
                 <p>Comprehensive audit + fixes. Everything in Quick Wins plus accessibility, sitemap setup, competitor analysis, content recommendations, 30-day support.</p>
                 <div class="service-price">$2,500</div>
                 <div class="service-detail">2-3 weeks + ongoing support</div>
+                <a href="https://buy.stripe.com/3cIcN79g9fKWcMX38Bf7i01" class="service-button">Get Started</a>
             </div>
             
             <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 4L2 12l6 8M16 4l6 8-6 8" stroke="white" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
+                        <line x1="14" y1="6" x2="10" y2="18" stroke="white" stroke-width="0.8" stroke-linecap="round"/>
+                    </svg>
+                </div>
                 <h3>Custom Website Development & Builds</h3>
                 <p>Fully optimized custom websites built for speed, SEO, and conversions from day one. WordPress, Shopify, or modern frameworks with AI-enhanced optimization.</p>
                 <div class="service-price">Starting at $3,000</div>
                 <div class="service-detail">3-6 weeks depending on scope</div>
+                <a href="mailto:dave@davecummings.co?subject=Custom%20Website%20Quote%20Request" class="service-button secondary">Request Quote</a>
             </div>
             
             <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="9" stroke="white" stroke-width="0.8"/>
+                        <path d="M12 6v6l4 4" stroke="white" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="12" cy="12" r="1.5" fill="white"/>
+                    </svg>
+                </div>
                 <h3>Monthly SEO & Performance Retainer</h3>
                 <p>Ongoing monitoring, monthly reports, priority support, continuous optimization. Stay ahead of Google updates without lifting a finger.</p>
                 <div class="service-price">$600<span style="font-size: 24px;">/mo</span></div>
                 <div class="service-detail">Cancel anytime</div>
+                <a href="https://buy.stripe.com/fZu4gBcsldCOcMX10tf7i02" class="service-button">Subscribe Now</a>
             </div>
         </div>
     </section>
@@ -648,7 +752,7 @@
         <div class="footer-content">
             <div class="footer-logo">
                 <h3>Dave Cummings</h3>
-                <p>Website Consultant | Performance, SEO & Visibility</p>
+                <p>Web Consultant | Performance, SEO & Visibility</p>
             </div>
             
             <div class="footer-links">
