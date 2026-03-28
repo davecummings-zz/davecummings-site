@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Dave Cummings - Schedule Your Free Consultation</title>
+    <meta name="description" content="Book a free 30-minute consultation with Dave Cummings. Discuss your website goals, get expert advice, and explore how we can work together.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://davecummings.co/contact">
+    <meta property="og:title" content="Contact Dave Cummings - Free Consultation">
+    <meta property="og:description" content="Schedule a free 30-minute consultation. Let's talk about your website.">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://davecummings.co/contact">
+    <meta property="twitter:title" content="Contact Dave Cummings">
+    <meta property="twitter:description" content="Schedule a free 30-minute consultation.">
+    
+    <link rel="canonical" href="https://davecummings.co/contact.html">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            /* Primary */
+            --midnight: #003A5D;
+            --slate: #475569;
+            --pearl: #F8FAFC;
+            
+            /* Accents */
+            --red-orange: #e20f2e;
+            
+            /* Neutrals */
+            --white: #FFFFFF;
+            --gray-100: #F1F5F9;
+            --gray-300: #CBD5E1;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--slate);
+            background: var(--pearl);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 800;
+            line-height: 1.1;
+            color: var(--midnight);
+        }
+        
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(248, 250, 252, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 28px 48px;
+            z-index: 1000;
+            border-bottom: 1px solid var(--gray-300);
+        }
+        
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 800;
+            font-size: 32px;
+            color: var(--midnight);
+            text-decoration: none;
+            letter-spacing: -1.5px;
+        }
+        
+        .logo span {
+            color: var(--red-orange);
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 56px;
+            align-items: center;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--slate);
+            font-weight: 600;
+            font-size: 17px;
+            transition: color 0.3s ease;
+        }
+        
+        nav a:hover {
+            color: var(--red-orange);
+        }
+        
+        .nav-cta {
+            background: var(--red-orange);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 12px;
+            font-weight: 700;
+            box-shadow: 0 4px 14px rgba(229, 41, 3, 0.3);
+        }
+        
+        .nav-cta:hover {
+            background: #C72203;
+            color: white;
+        }
+        
+        /* Hero */
+        .hero {
+            padding: 180px 48px 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 72px;
+            margin-bottom: 24px;
+            letter-spacing: -2px;
+        }
+        
+        .hero h1 .highlight {
+            color: var(--red-orange);
+        }
+        
+        .hero p {
+            font-size: 24px;
+            color: var(--slate);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Content */
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 48px 120px;
+        }
+        
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+        
+        .info-box {
+            background: var(--white);
+            padding: 48px;
+            border-radius: 20px;
+            border: 2px solid var(--gray-300);
+        }
+        
+        .info-box h2 {
+            font-size: 36px;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+        
+        .info-box p {
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 24px;
+            color: var(--slate);
+        }
+        
+        .info-list {
+            list-style: none;
+            margin-top: 32px;
+        }
+        
+        .info-list li {
+            font-size: 17px;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--gray-300);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .info-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .info-list li::before {
+            content: '✓';
+            color: var(--red-orange);
+            font-weight: 800;
+            font-size: 20px;
+        }
+        
+        .calendly-container {
+            background: var(--white);
+            border-radius: 20px;
+            border: 2px solid var(--gray-300);
+            overflow: hidden;
+            min-height: 700px;
+        }
+        
+        .fallback-contact {
+            padding: 48px;
+            text-align: center;
+        }
+        
+        .fallback-contact h3 {
+            font-size: 28px;
+            margin-bottom: 16px;
+        }
+        
+        .fallback-contact p {
+            font-size: 18px;
+            margin-bottom: 32px;
+            color: var(--slate);
+        }
+        
+        .contact-button {
+            display: inline-block;
+            background: var(--red-orange);
+            color: white;
+            padding: 20px 48px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            box-shadow: 0 6px 20px rgba(229, 41, 3, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .contact-button:hover {
+            background: #C72203;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(229, 41, 3, 0.4);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--midnight);
+            color: var(--gray-300);
+            padding: 80px 48px 48px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 80px;
+            padding-bottom: 56px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        
+        .footer-logo h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--white);
+            font-size: 28px;
+            margin-bottom: 12px;
+            font-weight: 800;
+        }
+        
+        .footer-logo p {
+            color: var(--gray-300);
+            font-size: 17px;
+            line-height: 1.6;
+        }
+        
+        .footer-links,
+        .footer-social {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .footer-section-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a,
+        .footer-social a {
+            color: var(--gray-300);
+            text-decoration: none;
+            font-size: 17px;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .footer-links a:hover,
+        .footer-social a:hover {
+            color: var(--red-orange);
+        }
+        
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 40px;
+            text-align: center;
+        }
+        
+        .footer-bottom p {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.85);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 48px;
+            }
+            
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="/" class="logo">Dave<span>.</span></a>
+            <ul>
+                <li><a href="/#services">Services</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/contact.html" class="nav-cta">Get Started</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Let's <span class="highlight">Get Started</span></h1>
+        <p>Schedule a free 30-minute consultation to discuss your website goals and explore how we can work together.</p>
+    </section>
+
+    <!-- Content -->
+    <div class="content">
+        <div class="two-column">
+            <!-- Info Box -->
+            <div class="info-box">
+                <h2>What to Expect</h2>
+                <p>Our initial consultation is completely free and no-obligation. We'll discuss:</p>
+                
+                <ul class="info-list">
+                    <li>Your current website challenges and goals</li>
+                    <li>Quick wins we can identify right away</li>
+                    <li>Performance and SEO opportunities</li>
+                    <li>Pricing and timeline for your project</li>
+                    <li>Next steps if we're a good fit</li>
+                </ul>
+                
+                <p style="margin-top: 32px;">Prefer to email? Reach out directly at <strong>dave@davecummings.co</strong></p>
+            </div>
+            
+            <!-- Calendly Embed -->
+            <div class="calendly-container">
+                <!-- Replace YOUR_CALENDLY_LINK with your actual Calendly URL -->
+                <div class="fallback-contact">
+                    <h3>Schedule Your Free Consultation</h3>
+                    <p>Click below to choose a time that works for you.</p>
+                    <a href="https://calendly.com/YOUR_CALENDLY_LINK" class="contact-button" target="_blank" rel="noopener">Book Your Call</a>
+                    <p style="margin-top: 32px; font-size: 16px;">Or email me at <a href="mailto:dave@davecummings.co" style="color: var(--red-orange); text-decoration: none; font-weight: 700;">dave@davecummings.co</a></p>
+                </div>
+                
+                <!-- Uncomment below and add your Calendly URL to enable inline embed -->
+                <!--
+                <iframe 
+                    src="https://calendly.com/YOUR_CALENDLY_LINK?embed_domain=davecummings.co&embed_type=Inline"
+                    width="100%" 
+                    height="700" 
+                    frameborder="0"
+                    title="Schedule a consultation with Dave Cummings">
+                </iframe>
+                -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h3>Dave Cummings</h3>
+                <p>Web Consultant | Performance, SEO & Visibility</p>
+            </div>
+            
+            <div class="footer-links">
+                <div class="footer-section-title">Navigate</div>
+                <a href="/">Home</a>
+                <a href="/#services">Services</a>
+                <a href="/about.html">About</a>
+                <a href="/contact.html">Contact</a>
+            </div>
+            
+            <div class="footer-social">
+                <div class="footer-section-title">Connect</div>
+                <a href="https://www.linkedin.com/in/david-cummings-35191612">LinkedIn</a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Dave Cummings. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

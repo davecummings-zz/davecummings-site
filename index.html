@@ -18,9 +18,124 @@
     <meta property="twitter:title" content="Dave Cummings - Website Consultant">
     <meta property="twitter:description" content="I build fully optimized websites that work — and fix the ones that don't. 16 years of development expertise.">
     
+    <link rel="canonical" href="https://davecummings.co/">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Dave Cummings - Website Consultant",
+      "description": "Website consulting, performance optimization, SEO, and custom web development services. 16 years of ecommerce expertise.",
+      "url": "https://davecummings.co",
+      "logo": "https://davecummings.co/logo.png",
+      "image": "https://davecummings.co/og-image.png",
+      "telephone": "",
+      "email": "dave@davecummings.co",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Texas",
+        "addressRegion": "TX",
+        "addressCountry": "US"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Dave Cummings",
+        "url": "https://davecummings.co",
+        "sameAs": [
+          "https://www.linkedin.com/in/david-cummings-35191612"
+        ],
+        "jobTitle": "Website Consultant",
+        "description": "Website consultant with 16 years of ecommerce development experience. Specializes in performance optimization, SEO, and custom web solutions."
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Website Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Quick Wins Package",
+              "description": "Fix the top 5 issues killing your site's performance and rankings. Meta descriptions, caching, image optimization, schema markup, Google reviews.",
+              "provider": {
+                "@type": "ProfessionalService",
+                "name": "Dave Cummings - Website Consultant"
+              }
+            },
+            "price": "950",
+            "priceCurrency": "USD",
+            "url": "https://davecummings.co#services"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Full Website Audit & Optimization",
+              "description": "Comprehensive audit + fixes. Everything in Quick Wins plus accessibility, sitemap setup, competitor analysis, content recommendations, 30-day support.",
+              "provider": {
+                "@type": "ProfessionalService",
+                "name": "Dave Cummings - Website Consultant"
+              }
+            },
+            "price": "2500",
+            "priceCurrency": "USD",
+            "url": "https://davecummings.co#services"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Custom Website Development & Builds",
+              "description": "Fully optimized custom websites built for speed, SEO, and conversions from day one. WordPress, Shopify, or modern frameworks with AI-enhanced optimization.",
+              "provider": {
+                "@type": "ProfessionalService",
+                "name": "Dave Cummings - Website Consultant"
+              }
+            },
+            "priceRange": "$3000+",
+            "priceCurrency": "USD",
+            "url": "https://davecummings.co#services"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Monthly SEO & Performance Retainer",
+              "description": "Ongoing monitoring, monthly reports, priority support, continuous optimization, plus routine or minor content changes to the site.",
+              "provider": {
+                "@type": "ProfessionalService",
+                "name": "Dave Cummings - Website Consultant"
+              }
+            },
+            "price": "600",
+            "priceCurrency": "USD",
+            "billingIncrement": "P1M",
+            "url": "https://davecummings.co#services"
+          }
+        ]
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "knowsAbout": [
+        "Web Development",
+        "SEO",
+        "Website Performance Optimization",
+        "Ecommerce",
+        "WordPress",
+        "Shopify",
+        "Web Consulting"
+      ]
+    }
+    </script>
+    
     <style>
         * {
             margin: 0;
@@ -630,8 +745,8 @@
             <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
             <ul id="nav-menu">
                 <li><a href="#services">Services</a></li>
-                <li><a href="#process">Process</a></li>
-                <li><a href="#contact" class="nav-cta">Get Started</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/contact.html" class="nav-cta">Get Started</a></li>
             </ul>
         </nav>
     </header>
@@ -698,7 +813,7 @@
                     </svg>
                 </div>
                 <h3>Monthly SEO & Performance Retainer</h3>
-                <p>Ongoing monitoring, monthly reports, priority support, continuous optimization. Stay ahead of Google updates without lifting a finger.</p>
+                <p>Ongoing monitoring, monthly reports, priority support, continuous optimization, plus routine or minor content changes to the site. Stay ahead of Google updates without lifting a finger.</p>
                 <div class="service-price">$600<span style="font-size: 24px;">/mo</span></div>
                 <div class="service-detail">Cancel anytime</div>
                 <a href="https://buy.stripe.com/fZu4gBcsldCOcMX10tf7i02" class="service-button">Subscribe Now</a>
@@ -757,9 +872,10 @@
             
             <div class="footer-links">
                 <div class="footer-section-title">Navigate</div>
+                <a href="/">Home</a>
                 <a href="#services">Services</a>
-                <a href="#process">Process</a>
-                <a href="#contact">Contact</a>
+                <a href="/about.html">About</a>
+                <a href="/contact.html">Contact</a>
             </div>
             
             <div class="footer-social">

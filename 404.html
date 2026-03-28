@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - Dave Cummings</title>
+    <meta name="description" content="The page you're looking for doesn't exist. Let's get you back on track.">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --midnight: #003A5D;
+            --slate: #475569;
+            --pearl: #F8FAFC;
+            --red-orange: #e20f2e;
+            --white: #FFFFFF;
+            --gray-300: #CBD5E1;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--slate);
+            background: var(--pearl);
+            line-height: 1.6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        h1, h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 800;
+            line-height: 1.1;
+            color: var(--midnight);
+        }
+        
+        .container {
+            max-width: 700px;
+            text-align: center;
+        }
+        
+        .error-code {
+            font-size: 180px;
+            font-weight: 800;
+            color: var(--red-orange);
+            line-height: 1;
+            margin-bottom: 24px;
+            font-family: 'Space Grotesk', sans-serif;
+            letter-spacing: -4px;
+        }
+        
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            letter-spacing: -1.5px;
+        }
+        
+        p {
+            font-size: 20px;
+            color: var(--slate);
+            margin-bottom: 48px;
+            line-height: 1.6;
+        }
+        
+        .buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .button {
+            display: inline-block;
+            padding: 18px 40px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 17px;
+            transition: all 0.3s ease;
+        }
+        
+        .button-primary {
+            background: var(--red-orange);
+            color: white;
+            box-shadow: 0 4px 14px rgba(229, 41, 3, 0.3);
+        }
+        
+        .button-primary:hover {
+            background: #C72203;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(229, 41, 3, 0.4);
+        }
+        
+        .button-secondary {
+            background: var(--white);
+            color: var(--midnight);
+            border: 2px solid var(--gray-300);
+        }
+        
+        .button-secondary:hover {
+            border-color: var(--midnight);
+            transform: translateY(-2px);
+        }
+        
+        .links {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 2px solid var(--gray-300);
+        }
+        
+        .links h2 {
+            font-size: 24px;
+            margin-bottom: 24px;
+        }
+        
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+        
+        .links-grid a {
+            color: var(--slate);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            padding: 12px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid var(--gray-300);
+            transition: all 0.3s ease;
+        }
+        
+        .links-grid a:hover {
+            color: var(--red-orange);
+            border-color: var(--red-orange);
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 600px) {
+            .error-code {
+                font-size: 120px;
+            }
+            
+            h1 {
+                font-size: 36px;
+            }
+            
+            p {
+                font-size: 18px;
+            }
+            
+            .buttons {
+                flex-direction: column;
+            }
+            
+            .button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="error-code">404</div>
+        <h1>Page Not Found</h1>
+        <p>Oops! The page you're looking for doesn't exist. It might have been moved or deleted, or maybe you followed a broken link.</p>
+        
+        <div class="buttons">
+            <a href="/" class="button button-primary">Go Home</a>
+            <a href="/contact.html" class="button button-secondary">Contact Us</a>
+        </div>
+        
+        <div class="links">
+            <h2>Quick Links</h2>
+            <div class="links-grid">
+                <a href="/">Home</a>
+                <a href="/#services">Services</a>
+                <a href="/about.html">About</a>
+                <a href="/contact.html">Contact</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
