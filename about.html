@@ -66,11 +66,10 @@
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(248, 250, 252, 0.95);
-            backdrop-filter: blur(10px);
+            background: #003A5D;
             padding: 28px 48px;
             z-index: 1000;
-            border-bottom: 1px solid var(--gray-300);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         nav {
@@ -85,7 +84,7 @@
             font-family: 'Space Grotesk', sans-serif;
             font-weight: 800;
             font-size: 32px;
-            color: var(--midnight);
+            color: white;
             text-decoration: none;
             letter-spacing: -1.5px;
         }
@@ -103,14 +102,24 @@
         
         nav a {
             text-decoration: none;
-            color: var(--slate);
+            color: rgba(255, 255, 255, 1);
             font-weight: 600;
             font-size: 17px;
             transition: color 0.3s ease;
         }
         
         nav a:hover {
-            color: var(--red-orange);
+            opacity: 0.9;
+        }
+        
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 32px;
+            color: var(--white);
+            cursor: pointer;
+            padding: 8px;
         }
         
         .nav-cta {
@@ -119,11 +128,15 @@
             padding: 16px 40px;
             border-radius: 12px;
             font-weight: 700;
+            font-size: 17px;
             box-shadow: 0 4px 14px rgba(229, 41, 3, 0.3);
+            transition: all 0.3s ease;
         }
         
         .nav-cta:hover {
             background: #C72203;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(229, 41, 3, 0.4);
             color: white;
         }
         
@@ -164,7 +177,7 @@
             padding: 60px;
             border-radius: 20px;
             margin-bottom: 60px;
-            border: 2px solid var(--gray-300);
+            border: 1px solid var(--gray-300);
         }
         
         .story h2 {
@@ -197,7 +210,7 @@
             padding: 40px 32px;
             border-radius: 16px;
             text-align: center;
-            border: 2px solid var(--gray-300);
+            border: 1px solid var(--gray-300);
         }
         
         .stat-number {
@@ -220,7 +233,7 @@
             padding: 60px;
             border-radius: 20px;
             margin-bottom: 60px;
-            border: 2px solid var(--gray-300);
+            border: 1px solid var(--gray-300);
         }
         
         .skills h2 {
@@ -344,7 +357,7 @@
         
         .footer-links a:hover,
         .footer-social a:hover {
-            color: var(--red-orange);
+            opacity: 0.9;
         }
         
         .footer-bottom {
@@ -361,6 +374,64 @@
         
         /* Responsive */
         @media (max-width: 768px) {
+            header {
+                padding: 16px 24px;
+            }
+            
+            nav {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+            
+            .logo {
+                font-size: 28px;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 110px;
+                left: 0;
+                right: 0;
+                background: var(--midnight);
+                flex-direction: column;
+                gap: 0;
+                width: 100%;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+                border-top: 1px solid rgba(255, 255, 255, 0.2);
+                padding: 0;
+            }
+            
+            nav ul.active {
+                display: flex;
+            }
+            
+            nav ul li {
+                width: 100%;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            }
+            
+            nav ul li:last-child {
+                border-bottom: none;
+            }
+            
+            nav a {
+                display: block;
+                text-align: center;
+                padding: 20px;
+            }
+            
+            .nav-cta {
+                width: 100%;
+                border-radius: 0;
+                box-shadow: none;
+            }
+            
             .hero h1 {
                 font-size: 48px;
             }
@@ -385,9 +456,11 @@
     <header>
         <nav>
             <a href="/" class="logo">Dave<span>.</span></a>
-            <ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul id="nav-menu">
                 <li><a href="/#services">Services</a></li>
                 <li><a href="/about.html">About</a></li>
+                <li><a href="/contact.html">Contact</a></li>
                 <li><a href="/contact.html" class="nav-cta">Get Started</a></li>
             </ul>
         </nav>
@@ -478,5 +551,30 @@
             <p>&copy; 2026 Dave Cummings. All rights reserved.</p>
         </div>
     </footer>
+    
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close menu when clicking a link
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('nav')) {
+                navMenu.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>

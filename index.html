@@ -179,11 +179,10 @@
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(248, 250, 252, 0.95);
-            backdrop-filter: blur(10px);
+            background: #003A5D;
             padding: 28px 48px;
             z-index: 1000;
-            border-bottom: 1px solid var(--gray-300);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         nav {
@@ -198,7 +197,7 @@
             font-family: 'Space Grotesk', sans-serif;
             font-weight: 800;
             font-size: 32px;
-            color: var(--midnight);
+            color: white;
             text-decoration: none;
             letter-spacing: -1.5px;
         }
@@ -216,14 +215,14 @@
         
         nav a {
             text-decoration: none;
-            color: var(--slate);
+            color: rgba(255, 255, 255, 1);
             font-weight: 600;
             font-size: 17px;
             transition: color 0.3s ease;
         }
         
         nav a:hover {
-            color: var(--red-orange);
+            opacity: 0.9;
         }
         
         .mobile-menu-toggle {
@@ -231,7 +230,7 @@
             background: none;
             border: none;
             font-size: 32px;
-            color: var(--midnight);
+            color: var(--white);
             cursor: pointer;
             padding: 8px;
         }
@@ -259,33 +258,9 @@
             padding: 220px 48px 160px;
             max-width: 100%;
             margin: 0 auto;
-            background: #003A5D;
+            background: var(--white);
             position: relative;
             overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(226, 15, 46, 0.3) 0%, transparent 60%);
-            border-radius: 50%;
-            top: -250px;
-            right: -150px;
-            z-index: 1;
-        }
-        
-        .hero::after {
-            content: '';
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(255, 107, 53, 0.25) 0%, transparent 60%);
-            border-radius: 50%;
-            bottom: -200px;
-            left: -150px;
-            z-index: 1;
         }
         
         .hero > * {
@@ -299,8 +274,8 @@
         
         .hero-label {
             display: inline-block;
-            background: rgba(255, 255, 255, 0.15);
-            color: var(--white);
+            background: var(--gray-100);
+            color: var(--midnight);
             padding: 10px 20px;
             border-radius: 24px;
             font-size: 15px;
@@ -310,6 +285,7 @@
             margin-bottom: 32px;
             margin-left: 0;
             margin-right: auto;
+            box-shadow: 0 3px 6px rgba(15, 23, 42, 0.12);
         }
         
         .hero h1 {
@@ -317,7 +293,7 @@
             margin-bottom: 32px;
             max-width: 1100px;
             letter-spacing: -2px;
-            color: var(--white);
+            color: var(--midnight);
             text-align: left;
             margin-left: 0;
             margin-right: auto;
@@ -329,7 +305,7 @@
         
         .hero p {
             font-size: 26px;
-            color: rgba(255, 255, 255, 0.9);
+            color: var(--slate);
             margin-bottom: 56px;
             max-width: 800px;
             line-height: 1.5;
@@ -382,12 +358,12 @@
             background: var(--white);
             padding: 56px;
             border-radius: 20px;
-            border: 2px solid var(--gray-300);
+            border: 1px solid var(--gray-300);
             transition: all 0.3s ease;
         }
         
         .service-card:hover {
-            border-color: #003A5D;
+            border-color: var(--gray-300);
             transform: translateY(-6px);
             box-shadow: 0 16px 32px rgba(15, 23, 42, 0.12);
         }
@@ -426,7 +402,7 @@
         .service-price {
             font-size: 40px;
             font-weight: 800;
-            color: var(--red-orange);
+            color: var(--midnight);
             margin-bottom: 12px;
             letter-spacing: -1px;
         }
@@ -627,7 +603,7 @@
         
         .footer-links a:hover,
         .footer-social a:hover {
-            color: var(--red-orange);
+            opacity: 0.9;
         }
         
         .footer-bottom {
@@ -665,15 +641,15 @@
             nav ul {
                 display: none;
                 position: absolute;
-                top: 80px;
+                top: 110px;
                 left: 0;
                 right: 0;
-                background: var(--white);
+                background: var(--midnight);
                 flex-direction: column;
                 gap: 0;
                 width: 100%;
                 box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-                border-top: 1px solid var(--gray-300);
+                border-top: 1px solid rgba(255, 255, 255, 0.2);
                 padding: 0;
             }
             
@@ -683,7 +659,7 @@
             
             nav ul li {
                 width: 100%;
-                border-bottom: 1px solid var(--gray-300);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
             }
             
             nav ul li:last-child {
@@ -704,6 +680,10 @@
             
             .hero {
                 padding: 140px 24px 80px;
+            }
+
+            .hero .hero-label {
+                font-size: 12px;
             }
             
             .hero h1 {
@@ -746,6 +726,7 @@
             <ul id="nav-menu">
                 <li><a href="#services">Services</a></li>
                 <li><a href="/about.html">About</a></li>
+                <li><a href="/contact.html">Contact</a></li>
                 <li><a href="/contact.html" class="nav-cta">Get Started</a></li>
             </ul>
         </nav>
