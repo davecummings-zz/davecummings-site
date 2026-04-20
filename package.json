@@ -2,6 +2,6 @@
   "name": "dave-site",
   "private": true,
   "engines": {
-    "node": "18.x"
+    "node": "24.x"
   }
 }
