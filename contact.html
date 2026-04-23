@@ -556,7 +556,7 @@
                     <li>Next steps if we're a good fit</li>
                 </ul>
                 
-                <p style="margin-top: 32px;">Prefer to email? Reach out directly at <strong>dave@davecummings.co</strong></p>
+                <p style="margin-top: 32px;">Prefer to email? Reach out directly at <strong><a href="mailto:dave@davecummings.co?subject=Website%20Consultation" style="color: var(--red-orange);">dave@davecummings.co</a></strong></p>
             </div>
             
             <!-- Contact Form -->
@@ -565,6 +565,9 @@
                 <p>Fill out the form below and I'll get back to you within one business day.</p>
 
                 <form class="contact-form" id="contactForm" novalidate>
+                    <input type="hidden" name="access_key" value="5885f8e4-c177-40bd-bbf2-4b417d907799">
+                    <input type="hidden" name="subject" value="New Contact Form Submission - davecummings.co">
+                    <input type="hidden" name="from_name" value="davecummings.co Contact Form">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" placeholder="Your name">
@@ -637,6 +640,9 @@
             formError.style.display = 'none';
 
             const data = {
+                access_key: '5885f8e4-c177-40bd-bbf2-4b417d907799',
+                subject: 'New Contact Form Submission - davecummings.co',
+                from_name: 'davecummings.co Contact Form',
                 name: document.getElementById('name').value.trim(),
                 email,
                 website: document.getElementById('website').value.trim(),
@@ -645,18 +651,18 @@
             };
 
             try {
-                const res = await fetch('/api/contact', {
+                const res = await fetch('https://api.web3forms.com/submit', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data),
                 });
 
-                if (res.ok) {
+                const json = await res.json().catch(() => ({}));
+                if (res.ok && json.success) {
                     contactForm.style.display = 'none';
                     formSuccess.style.display = 'block';
                 } else {
-                    const { error } = await res.json().catch(() => ({}));
-                    formError.textContent = error || 'Something went wrong. Please try again.';
+                    formError.textContent = json.message || 'Something went wrong. Please try again.';
                     formError.style.display = 'block';
                     submitBtn.textContent = 'Send Message';
                     submitBtn.disabled = false;

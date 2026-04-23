@@ -1,18 +1,4 @@
-const SERVICE_LABELS = {
-    'website-audit': 'Website Audit',
-    'performance': 'Performance Optimization',
-    'seo': 'SEO & Visibility',
-    'redesign': 'Website Redesign',
-    'other': 'Other / Not Sure Yet',
-};
-
-function esc(str) {
-    return String(str || '')
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;');
-}
+// Requires WEB3FORMS_ACCESS_KEY to be set in Vercel environment variables.
 
 module.exports = async function handler(req, res) {
     if (req.method !== 'POST') {
@@ -25,35 +11,29 @@ module.exports = async function handler(req, res) {
         return res.status(400).json({ error: 'A valid email address is required.' });
     }
 
-    const html = `
-<h2 style="font-family:sans-serif;color:#0F172A;">New contact form submission</h2>
-<table style="font-family:sans-serif;font-size:15px;line-height:1.6;color:#475569;border-collapse:collapse;">
-  <tr><td style="padding:6px 16px 6px 0;font-weight:600;color:#0F172A;">Name</td><td>${esc(name) || '<em>not provided</em>'}</td></tr>
-  <tr><td style="padding:6px 16px 6px 0;font-weight:600;color:#0F172A;">Email</td><td><a href="mailto:${esc(email)}">${esc(email)}</a></td></tr>
-  <tr><td style="padding:6px 16px 6px 0;font-weight:600;color:#0F172A;">Website</td><td>${esc(website) || '<em>not provided</em>'}</td></tr>
-  <tr><td style="padding:6px 16px 6px 0;font-weight:600;color:#0F172A;">Service</td><td>${esc(SERVICE_LABELS[service] || service) || '<em>not selected</em>'}</td></tr>
-</table>
-<h3 style="font-family:sans-serif;color:#0F172A;margin-top:24px;">Message</h3>
-<p style="font-family:sans-serif;font-size:15px;line-height:1.7;color:#475569;white-space:pre-wrap;">${esc(message) || '<em>none</em>'}</p>
-`;
-
-    const resendRes = await fetch('https://api.resend.com/emails', {
+    const w3fRes = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: {
-            'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
-            'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-            from: 'davecummings.co <contact@davecummings.co>',
-            to: 'dave@davecummings.co',
-            reply_to: email,
-            subject: `New inquiry from ${name || email}`,
-            html,
+            access_key: process.env.WEB3FORMS_ACCESS_KEY,
+            subject: 'New Contact Form Submission - davecummings.co',
+            from_name: 'davecummings.co Contact Form',
+            name: name || '',
+            email,
+            website: website || '',
+            service: service || '',
+            message: message || '',
         }),
     });
 
-    if (!resendRes.ok) {
-        console.error('Resend error:', await resendRes.text());
+    if (!w3fRes.ok) {
+        console.error('Web3Forms error:', await w3fRes.text());
+        return res.status(500).json({ error: 'Failed to send message. Please try again or email dave@davecummings.co directly.' });
+    }
+
+    const data = await w3fRes.json();
+    if (!data.success) {
+        console.error('Web3Forms rejected:', data);
         return res.status(500).json({ error: 'Failed to send message. Please try again or email dave@davecummings.co directly.' });
     }
 
