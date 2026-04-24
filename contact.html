@@ -35,7 +35,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800&family=Inter:wght@400;500;600&display=swap"></noscript>
     <style>
         * {
             margin: 0;
@@ -534,6 +535,7 @@
     <!-- Header -->
     <header></header>
 
+    <main>
     <!-- Hero -->
     <section class="hero">
         <h1>Let's <span class="highlight">Get Started</span></h1>
@@ -614,11 +616,12 @@
             </div>
         </div>
     </div>
+    </main>
 
     <!-- Footer -->
     <footer></footer>
 
-    <script src="includes.js"></script>
+    <script src="includes.js" defer></script>
     <script>
         // Contact form submission
         const contactForm = document.getElementById('contactForm');

@@ -35,7 +35,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800&family=Inter:wght@400;500;600&display=swap"></noscript>
 
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
@@ -729,12 +730,13 @@
     <!-- Header -->
     <header></header>
 
+    <main>
     <!-- Hero -->
     <section class="hero">
         <div class="hero-label">Web Consultant | Performance, SEO & Visibility</div>
         <h1>I build <span class="highlight">fully optimized websites</span> that work — and fix the ones that don't.</h1>
         <p>I use modern tools and AI to identify issues, then apply 16 years of development expertise to build, fix, and optimize what actually moves the needle.</p>
-        <a href="/contact.html" class="hero-cta">Get Your Free Website Review</a>
+        <a href="/contact.html" class="hero-cta" aria-label="Get your free website review - contact Dave">Get Your Free Website Review</a>
     </section>
 
     <!-- Services -->
@@ -751,7 +753,7 @@
                 <p>Fix the top 5 issues killing your site's performance and rankings. Meta descriptions, caching, image optimization, schema markup, Google reviews.</p>
                 <div class="service-price">$950</div>
                 <div class="service-detail">Delivered in 1 week</div>
-                <a href="https://buy.stripe.com/cNi6oJ7812YabITfVnf7i00" class="service-button" target="_blank">Get Started</a>
+                <a href="https://buy.stripe.com/cNi6oJ7812YabITfVnf7i00" class="service-button" target="_blank" aria-label="Get started with Quick Wins Package">Get Started</a>
             </div>
             
             <div class="service-card">
@@ -765,7 +767,7 @@
                 <p>Comprehensive audit + fixes. Everything in Quick Wins plus accessibility, sitemap setup, competitor analysis, content recommendations, 30-day support.</p>
                 <div class="service-price">$2,500</div>
                 <div class="service-detail">2-3 weeks + ongoing support</div>
-                <a href="https://buy.stripe.com/3cIcN79g9fKWcMX38Bf7i01" class="service-button" target="_blank">Get Started</a>
+                <a href="https://buy.stripe.com/3cIcN79g9fKWcMX38Bf7i01" class="service-button" target="_blank" aria-label="Get started with Full Website Audit &amp; Optimization">Get Started</a>
             </div>
             
             <div class="service-card">
@@ -836,13 +838,14 @@
         <div class="cta-content">
             <h2>Ready to Get Started?</h2>
             <p>Let's fix your website and start driving real results. Book a free 30-minute consultation.</p>
-            <a href="/contact.html" class="cta-button">Get Your Free Review</a>
+            <a href="/contact.html" class="cta-button" aria-label="Get your free website review - book a consultation">Get Your Free Review</a>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer></footer>
 
-    <script src="includes.js"></script>
+    <script src="includes.js" defer></script>
 </body>
 </html>
