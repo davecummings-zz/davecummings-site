@@ -255,7 +255,7 @@ The footer uses the V2 design from Footer Explorations.html:
 - Bottom bar: copyright left, coordinates right (30.508° N, 97.679° W)
 - Dark background (--bg-dark), all text left-aligned
 - No availability badge
-- Portfolio and Blog links omitted until those pages have content
+- Portfolio, Blog, and Resources links omitted from nav and footer until content is ready
 
 ## Header
 
@@ -323,6 +323,76 @@ Lower-page CTAs may vary contextually:
 - All contrast ratios documented inline as CSS comments
 - No Co-Authored-By trailers in commit messages
 - Always ask before committing or pushing — never auto-deploy
+
+## Avoiding AI Tells
+
+This site exists to demonstrate technical credibility. Visitors who can
+spot AI-generated copy and design patterns will lose trust if they spot
+them here. Both the copy and the visual design must avoid the following
+patterns. This applies to all deliverables — site copy, blog posts,
+commit messages, and CLAUDE.md itself.
+
+### Copy tells to avoid
+
+- Em dashes. Use commas, colons, parentheses, or two sentences instead.
+- "It's not just X, it's Y" constructions.
+- The rule-of-three sentence cadence used repeatedly (three-item lists
+  back to back to back).
+- Words and phrases: "delve," "navigate the complexities of," "in
+  today's fast-paced world," "leverage" as a verb, "robust," "seamless,"
+  "unlock," "elevate," "harness the power of," "game-changer,"
+  "revolutionize," "cutting-edge."
+- Superlatives without backup ("the best," "incredible," "amazing").
+  If you can't put a number or concrete example next to a claim, cut it.
+- Used-car-salesman energy. Calm confidence beats enthusiasm.
+
+### Design tells to avoid
+
+- Eyebrow labels (e.g. "// OUR PROCESS") above every section. Use
+  sparingly, twice on the whole site at most.
+- Numbered process step cards (01 Discovery → 02 Design → 03 Build).
+- Stat strips ("500+ projects · 15+ years · 100% satisfaction").
+- "Trusted by" or "As seen in" logo walls without real client logos.
+- Gradient mesh backgrounds.
+- Gradient-fill text (background-clip on headlines).
+- Glassmorphism / frosted-glass / backdrop-blur effects.
+- Section-section-section grids of identical feature cards with icon
+  + heading + two-sentence body.
+- Wordmark "punctuation as personality" (e.g. "Brand.") used as the
+  primary mark. Some uses are fine, but recognize the pattern.
+- Horizontal-scroll mobile nav. Either fit inline or use a hamburger.
+
+### Positive principles
+
+- Asymmetric layouts over symmetric grids when content allows.
+- Mixed section widths (some full-bleed, some narrow).
+- Prose paragraphs sometimes, where most sites would default to bullets.
+- Concrete numbers and named examples over abstract claims.
+- One strong example beats three weak ones.
+- Empty space reads as confidence.
+
+## Design Moments by Page
+
+Each page gets one distinctive moment so the site doesn't read as
+section-section-section template work. Status as of Part 2:
+
+| Page | Moment | Status |
+|------|--------|--------|
+| Home | Asymmetric hero, left-aligned, empty right column for future visual | Part 2 |
+| Services index | Speed receipt in footer of page (live Lighthouse score) | Part 3+ |
+| Custom Website Build | Speed receipt + before/after teaser → portfolio | Part 3+ |
+| AI Visibility Audit | Sample audit excerpt screenshot | Part 3+ |
+| About | Headshot + actual story prose (no process steps) | Part 3+ |
+| Portfolio | Before/after slider with real client screenshots | Deferred |
+| Pay pages | Speed receipt + minimal "what happens after you pay" | Part 4 |
+
+### Future / Resources page
+
+A dedicated /resources/ page is planned (not Part 2). It will host
+interactive tools that pre-qualify leads — likely starting with a
+"check if AI knows about your business" widget that calls Perplexity's
+API and shows the response with citations highlighted. Build the site
+so this is additive later, not a refactor.
 
 ## Deploy Workflow
 

@@ -9,5 +9,16 @@
     "indexed": false,
     "hreflang_es": null,
     "lang": "en"
+  },
+  {
+    "path": "index.html",
+    "title": "Dave Cummings — Custom websites built to rank and be cited",
+    "description": "Custom websites and web apps for small businesses in Central Texas. Built to load fast, rank in search, and get cited by Claude, ChatGPT, Gemini, and Perplexity.",
+    "canonical": "https://davecummings.co/",
+    "ogImage": "/og/home.png",
+    "schemaType": "LocalBusiness",
+    "indexed": true,
+    "hreflang_es": null,
+    "lang": "en"
   }
 ]

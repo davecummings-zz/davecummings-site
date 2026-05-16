@@ -42,7 +42,7 @@ function copyFile(src, dest) {
     fs.copyFileSync(src, dest);
     console.log(`  copied: ${path.relative(ROOT, dest)}`);
   } catch (e) {
-    die(`Cannot copy ${path.relative(ROOT, src)} → ${path.relative(ROOT, dest)}: ${e.message}`);
+    die(`Cannot copy ${path.relative(ROOT, src)} to ${path.relative(ROOT, dest)}: ${e.message}`);
   }
 }
 
@@ -60,12 +60,43 @@ function copyDir(srcDir, destDir) {
   }
 }
 
+function buildSchemaJsonLd(page) {
+  if (!page.schemaType) return '';
+
+  if (page.schemaType === 'LocalBusiness') {
+    const schema = {
+      '@context': 'https://schema.org',
+      '@type': 'LocalBusiness',
+      name: 'Dave Cummings',
+      description: page.description,
+      url: page.canonical,
+      email: 'dave@davecummings.co',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Round Rock',
+        addressRegion: 'TX',
+        addressCountry: 'US'
+      },
+      areaServed: 'Central Texas',
+      founder: {
+        '@type': 'Person',
+        name: 'Dave Cummings',
+        sameAs: ['https://www.linkedin.com/in/davidwcummings']
+      }
+    };
+    return `<script type="application/ld+json">\n${JSON.stringify(schema, null, 2)}\n</script>`;
+  }
+
+  // TODO: add handlers for schemaType: 'Service', 'Person', 'CreativeWork', 'Blog'
+  return '';
+}
+
 function buildHead(template, page) {
   const robots = page.indexed ? 'index, follow' : 'noindex, nofollow';
   const ogImageMeta = page.ogImage
     ? `\n<meta property="og:image" content="${page.ogImage}">`
     : '';
-  const schemaJsonLd = page.schemaJsonLd || '';
+  const schemaJsonLd = buildSchemaJsonLd(page);
 
   return template
     .replace(/\{\{TITLE\}\}/g, page.title)
