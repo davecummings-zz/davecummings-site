@@ -75,5 +75,71 @@
     "indexed": false,
     "hreflang_es": null,
     "lang": "en"
+  },
+  {
+    "path": "pay/ai-visibility-audit.html",
+    "title": "Pay — AI Visibility Audit — Dave Cummings",
+    "description": "Pay for the AI Visibility Audit. A 10-to-15 page PDF report on where your business stands across six dimensions of AI search visibility. Delivered in 3 business days.",
+    "canonical": "https://davecummings.co/pay/ai-visibility-audit/",
+    "ogImage": null,
+    "schemaType": null,
+    "indexed": false,
+    "hreflang_es": null,
+    "lang": "en"
+  },
+  {
+    "path": "pay/ai-audit-fix.html",
+    "title": "Pay — AI Visibility Audit + Fix — Dave Cummings",
+    "description": "Pay for the AI Visibility Audit plus implementation of the prioritized fix list. Complete engagement in 1 week.",
+    "canonical": "https://davecummings.co/pay/ai-audit-fix/",
+    "ogImage": null,
+    "schemaType": null,
+    "indexed": false,
+    "hreflang_es": null,
+    "lang": "en"
+  },
+  {
+    "path": "pay/quick-wins.html",
+    "title": "Pay — Quick Wins Package — Dave Cummings",
+    "description": "Pay for the Quick Wins Package. Top 5 performance and SEO issues identified and fixed in 1 week.",
+    "canonical": "https://davecummings.co/pay/quick-wins/",
+    "ogImage": null,
+    "schemaType": null,
+    "indexed": false,
+    "hreflang_es": null,
+    "lang": "en"
+  },
+  {
+    "path": "pay/full-audit.html",
+    "title": "Pay — Full Website Audit & Optimization — Dave Cummings",
+    "description": "Pay for the Full Website Audit & Optimization. Deep performance, SEO, and accessibility audit followed by implementation. Complete in 2 to 3 weeks.",
+    "canonical": "https://davecummings.co/pay/full-audit/",
+    "ogImage": null,
+    "schemaType": null,
+    "indexed": false,
+    "hreflang_es": null,
+    "lang": "en"
+  },
+  {
+    "path": "pay/custom-build.html",
+    "title": "Pay — Custom Website Build — Dave Cummings",
+    "description": "Pay the deposit for a custom website build. Typical projects land between $3,000 and $8,000 depending on scope.",
+    "canonical": "https://davecummings.co/pay/custom-build/",
+    "ogImage": null,
+    "schemaType": null,
+    "indexed": false,
+    "hreflang_es": null,
+    "lang": "en"
+  },
+  {
+    "path": "pay/retainer.html",
+    "title": "Pay — Monthly SEO & Performance Retainer — Dave Cummings",
+    "description": "Subscribe to the Monthly SEO & Performance Retainer. Ongoing optimization, monitoring, and small improvements. $600/month, cancel anytime.",
+    "canonical": "https://davecummings.co/pay/retainer/",
+    "ogImage": null,
+    "schemaType": null,
+    "indexed": false,
+    "hreflang_es": null,
+    "lang": "en"
   }
 ]
