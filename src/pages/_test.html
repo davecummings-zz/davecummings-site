@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="{{LANG}}">
+<head>
+{{HEAD}}
+</head>
+<body>
+
+{{HEADER}}
+
+<main class="container">
+  <h1>Pipeline Test</h1>
+
+  <h2>Typography Sample</h2>
+
+  <h3>A heading</h3>
+
+  <p>This is a paragraph of body text using the Inter typeface. The quick brown fox jumps over the lazy dog. Headings above use Instrument Sans. Both are loaded from Google Fonts.</p>
+
+  <p><a href="/">Back to home</a></p>
+
+  <ul>
+    <li>First list item</li>
+    <li>Second list item</li>
+    <li>Third list item</li>
+  </ul>
+
+  <button id="theme-toggle">Switch to dark</button>
+
+  <script>
+    (function () {
+      var btn = document.getElementById('theme-toggle');
+
+      function sync() {
+        btn.textContent = document.documentElement.dataset.theme === 'dark'
+          ? 'Switch to light'
+          : 'Switch to dark';
+      }
+
+      sync();
+
+      btn.addEventListener('click', function () {
+        var next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+        document.documentElement.dataset.theme = next;
+        localStorage.setItem('dc-theme', next);
+        sync();
+      });
+    })();
+  </script>
+</main>
+
+{{FOOTER}}
+
+</body>
+</html>

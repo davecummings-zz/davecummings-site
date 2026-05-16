@@ -1,0 +1,13 @@
+[
+  {
+    "path": "_test.html",
+    "title": "Test Page",
+    "description": "Pipeline test page — not for production.",
+    "canonical": "https://davecummings.co/_test.html",
+    "ogImage": null,
+    "schemaType": null,
+    "indexed": false,
+    "hreflang_es": null,
+    "lang": "en"
+  }
+]

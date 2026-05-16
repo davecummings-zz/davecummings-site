@@ -1,22 +1,23 @@
-# Dave Cummings - Website Consultant
+# davecummings.co
 
-**Website:** [Coming Soon]  
-**Services:** Performance Optimization, SEO, Website Development
+Static portfolio and consulting website for Dave Cummings — custom website builds, performance optimization, and AI visibility for small businesses in Central Texas. Built with a lightweight Node.js build system (no npm packages) that injects shared components and outputs to `/dist/` for Vercel deployment.
 
-## Tech Stack
-- HTML/CSS (Vanilla)
-- Hosted on Vercel
-- Custom design, responsive
+## Build
 
-## Deployment
-- Push to `main` branch
-- Vercel auto-deploys
-- Custom domain: [To be configured]
+```bash
+node build.js
+```
 
-## Contact
-- Email: [To be configured]
-- LinkedIn: [linkedin.com/in/davecummings]
+Reads `src/pages.json`, injects shared components, and writes all pages to `dist/`. Also generates `dist/sitemap.xml` and `dist/robots.txt`.
 
----
+## Preview
 
-**Version:** 1.0 (March 2026)
+```bash
+cd dist && python3 -m http.server 8000
+```
+
+Open `http://localhost:8000` in your browser.
+
+## Source of Truth
+
+**`CLAUDE.md`** is the authoritative reference for all design, content, architecture, and business decisions. Read it before making any changes to this repo.
