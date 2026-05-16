@@ -599,9 +599,13 @@ html[data-theme="dark"] .icon-moon { display: none; }
 /* Mobile header: 4 links fit inline, no hamburger.
    Add hamburger when Portfolio / Blog / Resources are set to
    indexed: true in pages.json and the nav grows beyond 4 items. */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .site-header__inner {
     gap: 12px;
+  }
+
+  .site-header__wordmark {
+    font-size: 1.0625rem; /* 17px — compact on mobile */
   }
 
   .site-nav {
@@ -614,7 +618,13 @@ html[data-theme="dark"] .icon-moon { display: none; }
   }
 
   .site-header__cta {
-    display: none; /* footer handles CTAs on mobile */
+    display: none; /* footer handles CTAs on mobile — applies to all pages */
+  }
+}
+
+@media (max-width: 480px) {
+  .site-nav {
+    gap: 12px;
   }
 }
 
@@ -877,5 +887,380 @@ html[data-theme="dark"] .icon-moon { display: none; }
 
   .section--contact {
     padding-block: 64px;
+  }
+}
+
+/* ================================================
+   Contact Page
+   ================================================ */
+
+.contact-section {
+  max-width: 720px;
+  padding-block: 96px;
+}
+
+.contact-section h1 {
+  margin-bottom: 20px;
+}
+
+.contact-section > p {
+  max-width: 560px;
+}
+
+.mailto-large {
+  display: block;
+  font-family: var(--mono);
+  font-size: clamp(1.25rem, 2.5vw, 1.625rem); /* 20px → 26px */
+  font-weight: 500;
+  color: var(--accent-dark); /* #1D4ED8 on #F8FAFC = 8.6:1 ✓ */
+  text-decoration: none;
+  margin-block: 32px 0;
+  transition: color 0.15s ease;
+}
+
+.mailto-large:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+html[data-theme="dark"] .mailto-large {
+  color: var(--accent); /* #3B82F6 on #0F172A = 5.6:1 ✓ */
+}
+
+.quickstart-card {
+  display: block;
+  margin-top: 28px;
+  padding: 24px;
+  border: 1px solid var(--page-border);
+  border-radius: var(--radius);
+  background-color: var(--page-surface);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.quickstart-card:hover {
+  border-color: var(--border-strong);
+  background-color: var(--page-surface-2);
+  color: inherit;
+}
+
+.quickstart-card__label {
+  display: block;
+  font-size: 0.6875rem; /* 11px */
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--page-text-muted); /* #64748B on #F8FAFC = 4.6:1 ✓ WCAG AA */
+  margin-bottom: 8px;
+}
+
+.quickstart-card p {
+  font-size: 0.875rem;
+  color: var(--page-text-soft);
+  margin: 0;
+}
+
+.other-ways {
+  margin-top: 56px;
+  padding-top: 40px;
+  border-top: 1px solid var(--page-border);
+}
+
+.other-ways__heading {
+  font-size: 0.8125rem; /* 13px */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--page-text-muted);
+  margin-bottom: 16px;
+}
+
+.other-ways__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.other-ways__item {
+  font-size: 0.9375rem; /* 15px */
+  color: var(--page-text-soft);
+}
+
+.other-ways__coords {
+  font-family: var(--mono);
+  font-size: 0.875rem;
+  color: var(--page-text-muted);
+}
+
+/* ================================================
+   Services Page
+   ================================================ */
+
+.services-intro {
+  padding-block: 64px 48px;
+}
+
+.services-intro h1 {
+  margin-bottom: 12px;
+}
+
+.services-intro__sub {
+  font-size: 1.0625rem; /* 17px */
+  color: var(--page-text-soft);
+  max-width: 640px;
+  line-height: 1.6;
+}
+
+/* Flagship two-column service card */
+.service-flagship {
+  display: grid;
+  grid-template-columns: 3fr 2fr; /* 60% / 40% */
+  gap: 48px;
+  align-items: start;
+  background-color: var(--page-surface);
+  border: 1px solid var(--page-border);
+  border-radius: var(--radius-lg);
+  padding: 44px;
+  margin-bottom: 20px;
+}
+
+.service-flagship__icon {
+  color: var(--accent-dark);
+  margin-bottom: 20px;
+}
+
+.service-flagship h2 {
+  margin-bottom: 16px;
+}
+
+.service-flagship__right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 4px;
+}
+
+.service-price-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.service-price-block__amount {
+  font-family: var(--display);
+  font-size: 1.5rem; /* 24px */
+  font-weight: 600;
+  color: var(--page-text);
+}
+
+.service-price-block__sub {
+  font-size: 0.8125rem; /* 13px */
+  color: var(--page-text-muted);
+}
+
+.service-timeline {
+  font-size: 0.875rem;
+  color: var(--page-text-soft);
+}
+
+/* AI Visibility Audit card — accent-tinted background */
+.service-audit {
+  background-color: var(--accent-faint); /* #F5F9FF — pale blue, not --accent-pale */
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  margin-bottom: 48px;
+}
+
+html[data-theme="dark"] .service-audit {
+  background-color: rgba(59, 130, 246, 0.08);
+  border-color: var(--border-dark);
+}
+
+.service-audit h2 {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.service-audit p {
+  max-width: 680px;
+}
+
+.service-audit__meta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.service-audit__price {
+  font-family: var(--display);
+  font-size: 1.25rem; /* 20px */
+  font-weight: 600;
+  color: var(--page-text);
+}
+
+.service-audit__timeline {
+  font-size: 0.875rem;
+  color: var(--page-text-muted);
+}
+
+.service-audit .btn {
+  margin-top: 24px;
+}
+
+/* Other services compact list */
+.services-other {
+  margin-bottom: 64px;
+}
+
+.services-other h2 {
+  font-size: 1.25rem; /* 20px — subsection label, smaller than flagship headings */
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--page-text);
+  margin-bottom: 4px;
+}
+
+.service-list {
+  border-top: 1px solid var(--page-border);
+  margin-inline: -12px; /* rows bleed into container padding on hover */
+}
+
+.service-row {
+  display: grid;
+  grid-template-columns: 2fr 3fr 1.5fr;
+  gap: 24px;
+  align-items: center;
+  padding: 20px 12px;
+  border-bottom: 1px solid var(--page-border);
+  border-radius: var(--radius-sm);
+  transition: background-color 0.15s ease;
+}
+
+.service-row:hover {
+  background-color: var(--page-surface-2);
+}
+
+.service-row__name {
+  font-size: 0.9375rem; /* 15px */
+  font-weight: 600;
+  color: var(--page-text);
+}
+
+.service-row__desc {
+  font-size: 0.875rem;
+  color: var(--page-text-soft);
+  line-height: 1.5;
+}
+
+.service-row__price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.service-row__amount {
+  font-size: 0.8125rem; /* 13px */
+  font-weight: 500;
+  color: var(--page-text);
+  text-align: right;
+}
+
+.service-row__link {
+  font-size: 0.8125rem; /* 13px */
+  font-weight: 500;
+  color: var(--page-link);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.service-row__link:hover {
+  text-decoration: underline;
+}
+
+/* Services page footer CTA */
+.services-cta {
+  max-width: 560px;
+  padding-block: 48px 80px;
+  border-top: 1px solid var(--page-border);
+}
+
+.services-cta p {
+  color: var(--page-text-muted);
+  margin-bottom: 24px;
+}
+
+/* ================================================
+   About Page (placeholder)
+   ================================================ */
+
+.about-content {
+  max-width: 640px;
+  padding-block: 96px;
+}
+
+.about-content h1 {
+  margin-bottom: 20px;
+}
+
+.about-content > p {
+  margin-bottom: 20px;
+}
+
+.page-links {
+  font-size: 0.9375rem; /* 15px */
+  color: var(--page-text-muted);
+}
+
+/* Mobile: new pages */
+@media (max-width: 767px) {
+  .contact-section {
+    padding-block: 64px;
+  }
+
+  .about-content {
+    padding-block: 64px;
+  }
+
+  .services-intro {
+    padding-block: 48px 32px;
+  }
+
+  .service-flagship {
+    grid-template-columns: 1fr;
+    padding: 28px;
+    gap: 32px;
+  }
+
+  .service-audit {
+    padding: 28px;
+  }
+
+  .services-cta {
+    padding-block: 40px 64px;
+  }
+}
+
+@media (max-width: 639px) {
+  .service-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 16px 12px;
+  }
+
+  .service-row__price {
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .mailto-large {
+    font-size: 1.25rem; /* 20px on small screens */
   }
 }
