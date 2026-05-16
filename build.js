@@ -87,7 +87,29 @@ function buildSchemaJsonLd(page) {
     return `<script type="application/ld+json">\n${JSON.stringify(schema, null, 2)}\n</script>`;
   }
 
-  // TODO: add handlers for schemaType: 'Service', 'Person', 'CreativeWork', 'Blog'
+  if (page.schemaType === 'Service') {
+    const name = page.title.replace(/\s*—\s*Dave Cummings$/, '');
+    const schema = {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name,
+      description: page.description,
+      provider: {
+        '@type': 'Person',
+        name: 'Dave Cummings',
+        url: 'https://davecummings.co/',
+        sameAs: ['https://www.linkedin.com/in/davidwcummings']
+      },
+      areaServed: {
+        '@type': 'Place',
+        name: 'Central Texas'
+      },
+      url: page.canonical
+    };
+    return `<script type="application/ld+json">\n${JSON.stringify(schema, null, 2)}\n</script>`;
+  }
+
+  // TODO: add handlers for schemaType: 'Person', 'CreativeWork', 'Blog'
   return '';
 }
 

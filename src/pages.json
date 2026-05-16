@@ -44,6 +44,28 @@
     "lang": "en"
   },
   {
+    "path": "services/custom-website-build.html",
+    "title": "Custom Website Build — Dave Cummings",
+    "description": "Custom websites built from scratch for small businesses in Central Texas. Fast, accessible, SEO-ready. Starts at $3,000.",
+    "canonical": "https://davecummings.co/services/custom-website-build/",
+    "ogImage": null,
+    "schemaType": "Service",
+    "indexed": true,
+    "hreflang_es": null,
+    "lang": "en"
+  },
+  {
+    "path": "services/ai-visibility-audit.html",
+    "title": "AI Visibility Audit — Dave Cummings",
+    "description": "Find out if your business shows up when people ask Claude, ChatGPT, Gemini, or Perplexity for recommendations. $350 audit, 3 business days.",
+    "canonical": "https://davecummings.co/services/ai-visibility-audit/",
+    "ogImage": null,
+    "schemaType": "Service",
+    "indexed": true,
+    "hreflang_es": null,
+    "lang": "en"
+  },
+  {
     "path": "about.html",
     "title": "About — Dave Cummings",
     "description": "About Dave Cummings, web developer and consultant in Central Texas.",

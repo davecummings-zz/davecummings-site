@@ -1264,3 +1264,262 @@ html[data-theme="dark"] .service-audit {
     font-size: 1.25rem; /* 20px on small screens */
   }
 }
+
+/* ================================================
+   Service Detail Pages
+   ================================================ */
+
+/* Hero */
+.service-detail-hero {
+  max-width: 720px;
+  padding-block: 96px;
+}
+
+.service-detail-hero h1 {
+  margin-bottom: 24px;
+}
+
+.service-detail-hero__sub {
+  font-size: 1.0625rem; /* 17px */
+  line-height: 1.7;
+  color: var(--page-text-soft);
+  margin: 0;
+}
+
+.service-detail-hero__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 36px;
+}
+
+/* Prose sections */
+.service-detail-prose {
+  max-width: 720px;
+  padding-block: 72px;
+}
+
+.service-detail-prose--bordered {
+  border-top: 1px solid var(--page-border);
+}
+
+.service-detail-prose h2 {
+  margin-bottom: 28px;
+}
+
+.service-detail-prose h3 {
+  margin-top: 40px;
+  margin-bottom: 16px;
+}
+
+.service-detail-prose p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--page-text-soft);
+}
+
+.service-detail-prose p + p {
+  margin-top: 16px;
+}
+
+/* Tonal section — breaks out of container padding for full-width background */
+.section-tonal {
+  background-color: var(--page-surface-2);
+  margin-inline: calc(-1 * clamp(1.5rem, 4vw, 3rem));
+  padding-inline: clamp(1.5rem, 4vw, 3rem);
+  padding-block: 72px;
+}
+
+.section-tonal h2 {
+  max-width: 720px;
+  margin-bottom: 40px;
+}
+
+/* Included / audit items — definition list */
+.included-list {
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.included-list__item {
+  display: grid;
+  gap: 6px;
+}
+
+.included-list dt {
+  font-family: var(--display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--page-text);
+}
+
+.included-list dd {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--page-text-soft);
+  margin-left: 0;
+}
+
+/* Subsection heading — smaller than .section-heading, used for sub-H2 headings */
+.subsection-heading {
+  font-family: var(--display);
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem); /* 20px → 28px */
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+/* Pricing section */
+.service-detail-pricing {
+  padding-block: 72px;
+  border-top: 1px solid var(--page-border);
+}
+
+.service-detail-pricing h2 {
+  margin-bottom: 20px;
+}
+
+.service-detail-pricing__intro {
+  max-width: 640px;
+  font-size: 1.0625rem; /* 17px */
+  line-height: 1.7;
+  color: var(--page-text-soft);
+  margin-bottom: 32px;
+}
+
+.service-detail-pricing__close {
+  max-width: 640px;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--page-text-soft);
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.pricing-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: var(--page-surface);
+  border: 1px solid var(--page-border);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  max-width: 560px;
+  margin-bottom: 28px;
+}
+
+.pricing-block__amount {
+  font-family: var(--display);
+  font-size: 2rem; /* 32px */
+  font-weight: 700;
+  color: var(--page-text);
+  line-height: 1.2;
+}
+
+.pricing-block__terms {
+  font-family: var(--mono);
+  font-size: 0.875rem; /* 14px */
+  color: var(--page-text-muted); /* #64748B on #F8FAFC = 4.6:1 ✓ WCAG AA */
+}
+
+.pricing-block__timeline {
+  font-size: 0.875rem;
+  color: var(--page-text-soft);
+}
+
+.pricing-block__note {
+  font-size: 0.875rem;
+  color: var(--page-text-soft);
+  padding-top: 12px;
+  border-top: 1px solid var(--page-border);
+  margin-top: 4px;
+}
+
+/* Sample report placeholder */
+.service-detail-sample {
+  padding-block: 0 72px;
+}
+
+.sample-placeholder {
+  max-width: 720px;
+  border: 1px solid var(--page-border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+}
+
+.sample-placeholder__label {
+  display: block;
+  font-size: 0.6875rem; /* 11px */
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--page-text-muted); /* #64748B on #F8FAFC = 4.6:1 ✓ WCAG AA */
+  margin-bottom: 16px;
+}
+
+.sample-placeholder__visual {
+  aspect-ratio: 16 / 9;
+  min-height: 200px;
+  border: 1px solid var(--page-border);
+  border-radius: var(--radius);
+  background-color: var(--page-surface-2);
+}
+
+.sample-placeholder__caption {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--page-text-muted);
+  margin-top: 16px;
+  margin-bottom: 0;
+}
+
+/* Final CTA */
+.service-detail-final-cta {
+  max-width: 560px;
+  padding-block: 96px;
+  border-top: 1px solid var(--page-border);
+}
+
+.service-detail-final-cta h2 {
+  margin-bottom: 16px;
+}
+
+.service-detail-final-cta p {
+  font-size: 1.0625rem; /* 17px */
+  line-height: 1.7;
+  color: var(--page-text-soft);
+  margin-bottom: 32px;
+}
+
+/* Mobile: service detail pages */
+@media (max-width: 767px) {
+  .service-detail-hero {
+    padding-block: 64px;
+  }
+
+  .service-detail-prose {
+    padding-block: 48px;
+  }
+
+  .section-tonal {
+    padding-block: 48px;
+  }
+
+  .service-detail-pricing {
+    padding-block: 48px;
+  }
+
+  .service-detail-final-cta {
+    padding-block: 64px;
+  }
+
+  .pricing-block {
+    padding: 28px;
+  }
+
+  .service-detail-sample {
+    padding-bottom: 48px;
+  }
+}
