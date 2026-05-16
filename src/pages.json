@@ -20,5 +20,38 @@
     "indexed": true,
     "hreflang_es": null,
     "lang": "en"
+  },
+  {
+    "path": "contact.html",
+    "title": "Contact — Dave Cummings",
+    "description": "Get in touch with Dave Cummings. Custom website builds, audits, and SEO for small businesses in Central Texas.",
+    "canonical": "https://davecummings.co/contact/",
+    "ogImage": null,
+    "schemaType": null,
+    "indexed": true,
+    "hreflang_es": null,
+    "lang": "en"
+  },
+  {
+    "path": "services/index.html",
+    "title": "Services — Dave Cummings",
+    "description": "Custom website builds, AI visibility audits, and SEO retainers for small businesses in Central Texas.",
+    "canonical": "https://davecummings.co/services/",
+    "ogImage": null,
+    "schemaType": null,
+    "indexed": true,
+    "hreflang_es": null,
+    "lang": "en"
+  },
+  {
+    "path": "about.html",
+    "title": "About — Dave Cummings",
+    "description": "About Dave Cummings, web developer and consultant in Central Texas.",
+    "canonical": "https://davecummings.co/about/",
+    "ogImage": null,
+    "schemaType": null,
+    "indexed": false,
+    "hreflang_es": null,
+    "lang": "en"
   }
 ]
