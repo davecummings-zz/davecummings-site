@@ -68,11 +68,11 @@
   {
     "path": "about.html",
     "title": "About — Dave Cummings",
-    "description": "About Dave Cummings, web developer and consultant in Central Texas.",
+    "description": "Dave Cummings is a web developer in Round Rock, Texas with 15+ years building ecommerce and small business sites. Custom builds, AI visibility, performance and SEO.",
     "canonical": "https://davecummings.co/about/",
     "ogImage": null,
-    "schemaType": null,
-    "indexed": false,
+    "schemaType": "Person",
+    "indexed": true,
     "hreflang_es": null,
     "lang": "en"
   },
@@ -141,5 +141,72 @@
     "indexed": false,
     "hreflang_es": null,
     "lang": "en"
+  },
+  {
+    "path": "projects/index.html",
+    "title": "Projects — Dave Cummings",
+    "description": "Recent custom websites and web apps built for small businesses in Central Texas.",
+    "canonical": "https://davecummings.co/projects/",
+    "ogImage": null,
+    "schemaType": null,
+    "indexed": false,
+    "hreflang_es": null,
+    "lang": "en"
+  },
+  {
+    "path": "insights/index.html",
+    "title": "Insights — Dave Cummings",
+    "description": "Writing on AI visibility, web performance and SEO, and lessons from real projects.",
+    "canonical": "https://davecummings.co/insights/",
+    "ogImage": null,
+    "schemaType": null,
+    "indexed": false,
+    "hreflang_es": null,
+    "lang": "en"
+  },
+  {
+    "path": "insights/what-is-ai-visibility/index.html",
+    "title": "What is AI Visibility? — Dave Cummings",
+    "description": "Search isn't just Google anymore. AI visibility is the practice of being found and cited by AI systems like Claude, ChatGPT, and Perplexity. Here's what it means and why it matters.",
+    "canonical": "https://davecummings.co/insights/what-is-ai-visibility/",
+    "ogImage": null,
+    "schemaType": "BlogPosting",
+    "indexed": false,
+    "hreflang_es": null,
+    "lang": "en",
+    "datePublished": "2026-01-15",
+    "dateModified": "2026-01-15",
+    "articleHeadline": "What is AI Visibility?",
+    "articleDescription": "Search isn't just Google anymore. AI visibility is the practice of being found and cited by AI systems like Claude, ChatGPT, and Perplexity. Here's what it means and why it matters."
+  },
+  {
+    "path": "insights/google-ranking-2026/index.html",
+    "title": "Why your Google ranking won't save you in 2026 — Dave Cummings",
+    "description": "Ranking #1 on Google means less than it used to. When ChatGPT, Claude, and Perplexity answer questions directly, the click is already gone.",
+    "canonical": "https://davecummings.co/insights/google-ranking-2026/",
+    "ogImage": null,
+    "schemaType": "BlogPosting",
+    "indexed": false,
+    "hreflang_es": null,
+    "lang": "en",
+    "datePublished": null,
+    "dateModified": null,
+    "articleHeadline": "Why your Google ranking won't save you in 2026",
+    "articleDescription": "Ranking #1 on Google means less than it used to. When ChatGPT, Claude, and Perplexity answer questions directly, the click is already gone."
+  },
+  {
+    "path": "insights/maintainability-tax/index.html",
+    "title": "The maintainability tax: what 'cheap' websites actually cost over five years — Dave Cummings",
+    "description": "A $500 builder site looks like a bargain on day one. Five years and three plugin migrations later, the math looks different.",
+    "canonical": "https://davecummings.co/insights/maintainability-tax/",
+    "ogImage": null,
+    "schemaType": "BlogPosting",
+    "indexed": false,
+    "hreflang_es": null,
+    "lang": "en",
+    "datePublished": null,
+    "dateModified": null,
+    "articleHeadline": "The maintainability tax: what 'cheap' websites actually cost over five years",
+    "articleDescription": "A $500 builder site looks like a bargain on day one. Five years and three plugin migrations later, the math looks different."
   }
 ]

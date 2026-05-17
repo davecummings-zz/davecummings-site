@@ -109,7 +109,54 @@ function buildSchemaJsonLd(page) {
     return `<script type="application/ld+json">\n${JSON.stringify(schema, null, 2)}\n</script>`;
   }
 
-  // TODO: add handlers for schemaType: 'Person', 'CreativeWork', 'Blog'
+  if (page.schemaType === 'BlogPosting') {
+    const now = new Date().toISOString().split('T')[0];
+    const schema = {
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      headline: page.articleHeadline || page.title,
+      description: page.articleDescription || page.description,
+      datePublished: page.datePublished || now,
+      dateModified: page.dateModified || page.datePublished || now,
+      author: {
+        '@type': 'Person',
+        name: 'Dave Cummings',
+        url: 'https://davecummings.co/about/',
+        sameAs: ['https://www.linkedin.com/in/davidwcummings']
+      },
+      publisher: {
+        '@type': 'Person',
+        name: 'Dave Cummings'
+      },
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': page.canonical
+      }
+    };
+    return `<script type="application/ld+json">\n${JSON.stringify(schema, null, 2)}\n</script>`;
+  }
+
+  if (page.schemaType === 'Person') {
+    const schema = {
+      '@context': 'https://schema.org',
+      '@type': 'Person',
+      name: 'Dave Cummings',
+      description: page.description,
+      url: page.canonical,
+      email: 'dave@davecummings.co',
+      jobTitle: 'Web Developer',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Round Rock',
+        addressRegion: 'TX',
+        addressCountry: 'US'
+      },
+      sameAs: ['https://www.linkedin.com/in/davidwcummings']
+    };
+    return `<script type="application/ld+json">\n${JSON.stringify(schema, null, 2)}\n</script>`;
+  }
+
+  // TODO: add handler for schemaType: 'CreativeWork'
   return '';
 }
 
@@ -213,6 +260,18 @@ function main() {
 
   // Copy src/assets/ if it exists
   copyDir(path.join(SRC, 'assets'), DIST);
+
+  // Copy src/images/ top-level image files to dist/images/
+  const imagesDir = path.join(SRC, 'images');
+  if (fs.existsSync(imagesDir)) {
+    const imageExts = new Set(['.jpg', '.jpeg', '.png', '.webp', '.svg']);
+    const imgEntries = fs.readdirSync(imagesDir, { withFileTypes: true });
+    for (const entry of imgEntries) {
+      if (!entry.isFile()) continue;
+      if (!imageExts.has(path.extname(entry.name).toLowerCase())) continue;
+      copyFile(path.join(imagesDir, entry.name), path.join(DIST, 'images', entry.name));
+    }
+  }
 
   // Generate sitemap.xml and robots.txt
   console.log('\nGenerated:');
