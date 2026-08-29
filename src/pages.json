@@ -1,16 +1,5 @@
 [
   {
-    "path": "_test.html",
-    "title": "Test Page",
-    "description": "Pipeline test page — not for production.",
-    "canonical": "https://davecummings.co/_test.html",
-    "ogImage": null,
-    "schemaType": null,
-    "indexed": false,
-    "hreflang_es": null,
-    "lang": "en"
-  },
-  {
     "path": "index.html",
     "title": "Dave Cummings — Custom websites built to rank and be cited",
     "description": "Custom websites and web apps for small businesses in Central Texas. Built to load fast, rank in search, and get cited by Claude, ChatGPT, Gemini, and Perplexity.",

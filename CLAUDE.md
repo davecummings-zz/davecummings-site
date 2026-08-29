@@ -75,9 +75,9 @@ Deliverable: Single PDF report with screenshots, gap analysis, fix list.
 These exist as scaffolding pages but have no real content yet, are not
 linked from header/footer, and are excluded from the sitemap:
 
-- `/portfolio/` — case studies will live here (TruIdentity, Austin Home
+- `/projects/` — case studies will live here (TruIdentity, Austin Home
   Services, others)
-- `/blog/` — AI visibility and performance topics
+- `/insights/` — AI visibility and performance topics
 
 They have `<meta name="robots" content="noindex, nofollow">` at launch.
 Control whether they appear in nav and sitemap via `indexed: true/false`
@@ -101,7 +101,7 @@ entries to pages.json and create `src/pages/es/` mirror.
 **Short-Term (1–3 months)**
 - 1–2 custom build leads/month via LinkedIn + organic search
 - 2–3 AI Visibility Audit leads/month
-- TruIdentity and Austin Home Services as portfolio case studies
+- TruIdentity and other work as project case studies
 - Stripe payment flow live for all services
 
 **Long-Term**
@@ -123,8 +123,8 @@ src/
     index.html                  ← homepage
     about.html
     contact.html
-    portfolio.html              ← coming-soon scaffolding, noindex
-    blog/
+    projects/index.html         ← coming-soon scaffolding, noindex
+    insights/
       index.html                ← coming-soon scaffolding, noindex
     services/
       index.html                ← all services overview
@@ -255,7 +255,7 @@ The footer uses the V2 design from Footer Explorations.html:
 - Bottom bar: copyright left, coordinates right (30.508° N, 97.679° W)
 - Dark background (--bg-dark), all text left-aligned
 - No availability badge
-- Portfolio, Blog, and Resources links omitted from nav and footer until content is ready
+- Projects, Insights, and Resources links omitted from nav and footer until content is ready
 
 ## Header
 
@@ -263,7 +263,7 @@ The footer uses the V2 design from Footer Explorations.html:
 - Right: nav links (Home, Services, About, Contact),
   theme toggle (sun/moon icon), primary CTA "Let's chat →"
 - Mobile: hamburger menu
-- Portfolio and Blog links omitted from nav until content is ready
+- Projects and Insights links omitted from nav until content is ready
 
 ## SEO Requirements
 
@@ -274,8 +274,8 @@ Every page must include:
   - Homepage: LocalBusiness + Person
   - Service pages: Service
   - About: Person (with sameAs linking to LinkedIn)
-  - Portfolio: CreativeWork per project (when content ready)
-  - Blog index: Blog (when content ready)
+  - Projects: CreativeWork per project (when content ready)
+  - Insights index: Blog (when content ready)
 - Open Graph and Twitter Card meta tags
 - Breadcrumb nav on all inner pages
 - hreflang tags emitted only when pages.json hreflang_es is non-null
@@ -380,10 +380,10 @@ section-section-section template work. Status as of Part 2:
 |------|--------|--------|
 | Home | Asymmetric hero, left-aligned, empty right column for future visual | Part 2 |
 | Services index | Speed receipt in footer of page (live Lighthouse score) | Part 3+ |
-| Custom Website Build | Speed receipt + before/after teaser → portfolio | Part 3+ |
+| Custom Website Build | Speed receipt + before/after teaser → projects | Part 3+ |
 | AI Visibility Audit | Sample audit excerpt screenshot | Part 3+ |
 | About | Headshot + actual story prose (no process steps) | Part 3+ |
-| Portfolio | Before/after slider with real client screenshots | Deferred |
+| Projects | Before/after slider with real client screenshots | Deferred |
 | Pay pages | Speed receipt + minimal "what happens after you pay" | Part 4 |
 
 ### Future / Resources page
