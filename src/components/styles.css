@@ -498,6 +498,7 @@ html[data-theme="dark"] .btn-outline:hover {
 
 .site-header {
   background-color: var(--bg-dark); /* always dark: header does not respond to the theme toggle */
+  border-bottom: 1px solid var(--border-dark-2); /* #334155 on #0F172A = 2.1:1 — decorative divider, not text, so it doesn't need AA */
   position: sticky;
   top: 0;
   z-index: 50;
