@@ -336,6 +336,20 @@ html[data-theme="dark"] .btn-outline {
   border-color: var(--accent);
 }
 
+/* Header CTA — header is always dark, so this button always uses the
+   brighter --accent for AA contrast against --bg-dark, regardless of
+   the light/dark toggle. Specificity (3 classes) beats the
+   html[data-theme="dark"] .btn-outline rule above in both modes. */
+.site-header .btn-outline.site-header__cta {
+  color: var(--accent); /* #3B82F6 on #0F172A = 5.6:1 ✓ WCAG AA */
+  border-color: var(--accent);
+}
+
+.site-header .btn-outline.site-header__cta:hover {
+  background-color: rgba(59, 130, 246, 0.08);
+  color: var(--accent);
+}
+
 html[data-theme="dark"] .btn-outline:hover {
   background-color: rgba(59, 130, 246, 0.12);
   color: var(--accent);
@@ -483,8 +497,7 @@ html[data-theme="dark"] .btn-outline:hover {
    ================================================ */
 
 .site-header {
-  background-color: var(--page-bg); /* #F8FAFC light / #0F172A dark — fully opaque, no bleed-through */
-  border-bottom: 1px solid var(--page-border);
+  background-color: var(--bg-dark); /* always dark: header does not respond to the theme toggle */
   position: sticky;
   top: 0;
   z-index: 50;
@@ -517,15 +530,11 @@ html[data-theme="dark"] .btn-outline:hover {
 }
 
 .wm-dave {
-  color: var(--page-text);
+  color: var(--ink-on-dark); /* #F8FAFC on #0F172A = 18.1:1 ✓ WCAG AA — header is always dark */
 }
 
 .wm-cummings {
-  color: var(--accent-dark); /* light: #1D4ED8 on #F8FAFC = 8.6:1 ✓ */
-}
-
-html[data-theme="dark"] .wm-cummings {
-  color: var(--accent); /* dark: #3B82F6 on #0F172A = 5.6:1 ✓ */
+  color: var(--accent); /* #3B82F6 on #0F172A = 5.6:1 ✓ WCAG AA — header is always dark */
 }
 
 /* Primary nav */
@@ -540,14 +549,14 @@ html[data-theme="dark"] .wm-cummings {
 .site-nav__link {
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--page-text-soft); /* #334155 on #F8FAFC = 10.7:1 ✓ */
+  color: var(--ink-on-dark-muted); /* #94A3B8 on #0F172A = 5.9:1 ✓ WCAG AA — header is always dark */
   text-decoration: none;
   white-space: nowrap;
   transition: color 0.15s ease;
 }
 
 .site-nav__link:hover {
-  color: var(--page-text);
+  color: var(--ink-on-dark); /* #F8FAFC on #0F172A = 18.1:1 ✓ WCAG AA */
 }
 
 .site-nav__link:focus-visible {
@@ -574,14 +583,14 @@ html[data-theme="dark"] .wm-cummings {
   border-radius: var(--radius);
   border: none;
   background: transparent;
-  color: var(--page-text-muted);
+  color: var(--ink-on-dark-muted); /* #94A3B8 on #0F172A = 5.9:1 ✓ WCAG AA — header is always dark */
   cursor: pointer;
   transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 .theme-toggle:hover {
-  background-color: var(--page-surface-2);
-  color: var(--page-text);
+  background-color: rgba(255, 255, 255, 0.06);
+  color: var(--ink-on-dark); /* #F8FAFC on #0F172A = 18.1:1 ✓ WCAG AA */
 }
 
 .theme-toggle:focus-visible {
