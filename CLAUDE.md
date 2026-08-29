@@ -20,16 +20,27 @@ he sells:
 - Fast load times, accessibility, mobile-first
 - The site itself must be AI-visible — practicing what it preaches
 
-**Positioning:** Custom website builds, performance & SEO optimization,
-AI visibility — by someone who's been building ecommerce sites for 15+ years.
+**Positioning:** Frontend engineering and solutions leader. Custom websites,
+performance, SEO, and AI visibility. 17 years working in tech, mostly in
+ecommerce.
 
-**Tagline:** "Fast, modern websites built to be found — by Google and by AI."
+**Tagline:** "Frontend engineering and solutions leader. Custom websites,
+performance, SEO, and AI visibility."
 
-**Supporting line:** "15 years building ecommerce sites. Now using AI to
-build them faster, leaner, and more discoverable than legacy theme shops can."
+**Supporting line:** "17 years working in tech, mostly in ecommerce. AI
+tooling makes it possible to ship in weeks now instead of months."
 
-**Target clients:** Small businesses in Central Texas / Austin metro area
+**Target clients:** Small businesses across the US, primarily Central Texas
 **Based:** Round Rock, TX
+
+## Tech stack for client work
+
+Dave's client work stack: React, Next.js, TypeScript, Vercel.
+
+This site itself uses vanilla HTML/CSS and native Node.js for its own
+reasons (Lighthouse, no dependencies, the site as its own portfolio piece).
+Do not confuse the two: this site's stack is a deliberate choice for the
+site as demonstration, not what Dave recommends to clients.
 
 ## Service Hierarchy
 

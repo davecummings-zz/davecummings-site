@@ -66,7 +66,7 @@ function buildSchemaJsonLd(page) {
   if (page.schemaType === 'LocalBusiness') {
     const schema = {
       '@context': 'https://schema.org',
-      '@type': 'LocalBusiness',
+      '@type': 'ProfessionalService',
       name: 'Dave Cummings',
       description: page.description,
       url: page.canonical,
@@ -81,7 +81,7 @@ function buildSchemaJsonLd(page) {
       founder: {
         '@type': 'Person',
         name: 'Dave Cummings',
-        sameAs: ['https://www.linkedin.com/in/davidwcummings']
+        sameAs: ['https://www.linkedin.com/in/david-cummings-35191612/']
       }
     };
     return `<script type="application/ld+json">\n${JSON.stringify(schema, null, 2)}\n</script>`;
@@ -98,7 +98,7 @@ function buildSchemaJsonLd(page) {
         '@type': 'Person',
         name: 'Dave Cummings',
         url: 'https://davecummings.co/',
-        sameAs: ['https://www.linkedin.com/in/davidwcummings']
+        sameAs: ['https://www.linkedin.com/in/david-cummings-35191612/']
       },
       areaServed: {
         '@type': 'Place',
@@ -122,7 +122,7 @@ function buildSchemaJsonLd(page) {
         '@type': 'Person',
         name: 'Dave Cummings',
         url: 'https://davecummings.co/about/',
-        sameAs: ['https://www.linkedin.com/in/davidwcummings']
+        sameAs: ['https://www.linkedin.com/in/david-cummings-35191612/']
       },
       publisher: {
         '@type': 'Person',
@@ -151,7 +151,7 @@ function buildSchemaJsonLd(page) {
         addressRegion: 'TX',
         addressCountry: 'US'
       },
-      sameAs: ['https://www.linkedin.com/in/davidwcummings']
+      sameAs: ['https://www.linkedin.com/in/david-cummings-35191612/']
     };
     return `<script type="application/ld+json">\n${JSON.stringify(schema, null, 2)}\n</script>`;
   }
