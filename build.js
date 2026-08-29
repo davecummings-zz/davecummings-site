@@ -144,7 +144,7 @@ function buildSchemaJsonLd(page) {
       description: page.description,
       url: page.canonical,
       email: 'dave@davecummings.co',
-      jobTitle: 'Web Developer',
+      jobTitle: 'Senior Frontend Engineer',
       address: {
         '@type': 'PostalAddress',
         addressLocality: 'Round Rock',
