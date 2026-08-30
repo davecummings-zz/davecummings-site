@@ -98,6 +98,7 @@ body {
   background-color: var(--page-bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden; /* defensive: stops any stray wide element from breaking the dark header/footer edge-to-edge backgrounds */
 }
 
 img,
@@ -606,9 +607,9 @@ html[data-theme="dark"] .btn-outline:hover {
 html[data-theme="dark"] .icon-sun  { display: block; }
 html[data-theme="dark"] .icon-moon { display: none; }
 
-/* Mobile header: 4 links fit inline, no hamburger.
-   Add hamburger when Portfolio / Blog / Resources are set to
-   indexed: true in pages.json and the nav grows beyond 4 items. */
+/* Tablet header: nav and wordmark compact slightly between 640px and
+   768px. Below 640px the hamburger takes over (see .hamburger-toggle
+   and .mobile-menu below). */
 @media (max-width: 768px) {
   .site-header__inner {
     gap: 12px;
@@ -626,9 +627,131 @@ html[data-theme="dark"] .icon-moon { display: none; }
   .site-nav__link {
     font-size: 0.8125rem; /* 13px */
   }
+}
+
+/* Hamburger button — hidden by default, shown below 640px */
+.hamburger-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: none;
+  background: transparent;
+  padding: 0;
+  color: var(--ink-on-dark-muted); /* #94A3B8 on #0F172A = 5.9:1 ✓ WCAG AA — header is always dark */
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.hamburger-toggle:hover {
+  color: var(--ink-on-dark); /* #F8FAFC on #0F172A = 18.1:1 ✓ WCAG AA */
+}
+
+.hamburger-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.hamburger-toggle__line {
+  transition: transform 200ms ease, opacity 200ms ease;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.hamburger-toggle[data-open="true"] .hamburger-toggle__line--1 {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.hamburger-toggle[data-open="true"] .hamburger-toggle__line--2 {
+  opacity: 0;
+}
+
+.hamburger-toggle[data-open="true"] .hamburger-toggle__line--3 {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Mobile dropdown menu — lives below the header, closed by default */
+.mobile-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: var(--bg-dark);
+  border-bottom: 1px solid var(--border-dark-2);
+  padding: 24px;
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+  transition: opacity 200ms ease-out, transform 200ms ease-out;
+}
+
+.mobile-menu[data-open="true"] {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.mobile-menu nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mobile-menu__link {
+  display: block;
+  font-size: 1.125rem; /* 18px — bigger tap target */
+  font-weight: 500;
+  color: var(--ink-on-dark-muted); /* #94A3B8 on #0F172A = 5.9:1 ✓ WCAG AA */
+  padding: 16px 0;
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-dark-2);
+  transition: color 150ms ease;
+}
+
+.mobile-menu__link:last-of-type {
+  border-bottom: none;
+}
+
+.mobile-menu__link:hover,
+.mobile-menu__link:focus-visible {
+  color: var(--ink-on-dark); /* #F8FAFC on #0F172A = 18.1:1 ✓ WCAG AA */
+}
+
+.mobile-menu__link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.mobile-menu__cta {
+  margin-top: 24px;
+  width: 100%;
+  justify-content: center;
+}
+
+/* Above 640px: hamburger and dropdown don't exist, header renders inline as normal */
+@media (min-width: 640px) {
+  .hamburger-toggle {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+}
+
+/* Below 640px: hide the inline nav and header CTA, hamburger takes over */
+@media (max-width: 639px) {
+  .site-nav {
+    display: none;
+  }
 
   .site-header__cta {
-    display: none; /* footer handles CTAs on mobile — applies to all pages */
+    display: none;
+  }
+
+  .hamburger-toggle {
+    display: flex;
   }
 }
 
