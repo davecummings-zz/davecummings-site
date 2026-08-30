@@ -2,7 +2,7 @@
   <div class="container site-header__inner">
 
     <a href="/" class="site-header__wordmark" aria-label="Dave Cummings, home">
-      <span class="wm-dave">Dave</span><span class="wm-cummings">Cummings</span>
+      <span class="wm-dave">Dave</span> <span class="wm-cummings">Cummings</span>
     </a>
 
     <nav class="site-nav" aria-label="Primary">
@@ -53,7 +53,7 @@
 
   </div>
 
-  <div id="mobile-menu" class="mobile-menu" data-open="false" aria-hidden="true">
+  <div id="mobile-menu" class="mobile-menu" data-open="false" aria-hidden="true" inert>
     <nav aria-label="Mobile primary">
       <a href="/" class="mobile-menu__link">Home</a>
       <a href="/services/" class="mobile-menu__link">Services</a>
@@ -99,6 +99,7 @@
       menu.dataset.open = 'true';
       toggle.setAttribute('aria-expanded', 'true');
       menu.setAttribute('aria-hidden', 'false');
+      menu.removeAttribute('inert');
       window.setTimeout(function () {
         if (links[0]) links[0].focus();
       }, 200);
@@ -109,6 +110,7 @@
       menu.dataset.open = 'false';
       toggle.setAttribute('aria-expanded', 'false');
       menu.setAttribute('aria-hidden', 'true');
+      menu.setAttribute('inert', '');
       if (returnFocus) toggle.focus();
     }
 
