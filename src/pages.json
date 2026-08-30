@@ -2,7 +2,7 @@
   {
     "path": "index.html",
     "title": "Dave Cummings — Frontend engineering and solutions leader",
-    "description": "Frontend engineering and solutions leader. Custom websites and web apps built to load fast, rank in search, and get cited by Claude, ChatGPT, Gemini, and Perplexity.",
+    "description": "Frontend engineering and solutions leader. Custom websites built to load fast, rank in search, and get cited by Claude, ChatGPT, Gemini, and Perplexity.",
     "canonical": "https://davecummings.co/",
     "ogImage": null,
     "schemaType": "LocalBusiness",
@@ -13,7 +13,7 @@
   {
     "path": "contact.html",
     "title": "Contact — Dave Cummings",
-    "description": "Get in touch with Dave Cummings. Custom website builds, audits, and SEO for small businesses in Central Texas.",
+    "description": "Get in touch with Dave Cummings. Custom website builds, audits, and SEO for small businesses. I read every message myself and reply within a day.",
     "canonical": "https://davecummings.co/contact/",
     "ogImage": null,
     "schemaType": null,
@@ -35,7 +35,7 @@
   {
     "path": "services/custom-website-build.html",
     "title": "Custom Website Build — Dave Cummings",
-    "description": "Custom websites built from scratch. Fast, accessible, SEO-ready. Modern tooling, clean code, no theme files or plugin spaghetti. Quoted at a fixed price after a discovery call.",
+    "description": "Custom websites built from scratch. Fast, accessible, SEO-ready. Modern tooling, no theme files. Fixed price quoted after a discovery call.",
     "canonical": "https://davecummings.co/services/custom-website-build/",
     "ogImage": null,
     "schemaType": "Service",
@@ -57,7 +57,7 @@
   {
     "path": "about.html",
     "title": "About — Dave Cummings",
-    "description": "Dave Cummings has been building websites since 2008, mostly ecommerce. Now shipping fast, modern sites with modern AI tooling. Frontend engineering and solutions leadership, custom builds, AI visibility, performance and SEO.",
+    "description": "Dave Cummings has been building websites since 2008, mostly ecommerce. Frontend engineering and solutions leadership, custom builds, and AI visibility.",
     "canonical": "https://davecummings.co/about/",
     "ogImage": null,
     "schemaType": "Person",
