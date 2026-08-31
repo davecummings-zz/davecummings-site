@@ -29,4 +29,13 @@
 <!-- Anti-FOUC: read theme from localStorage before first paint -->
 <script>(function(){var t=localStorage.getItem('dc-theme')||'light';document.documentElement.dataset.theme=t;})()</script>
 
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FQTN7YP548"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FQTN7YP548');
+</script>
+
 {{SCHEMA_JSONLD}}
