@@ -2346,3 +2346,155 @@ html[data-theme="dark"] .post-body a {
     padding-bottom: 48px;
   }
 }
+
+/* ================================================
+   404 Page — Terminal
+   ================================================ */
+
+.page-404 {
+  padding-block: 64px 96px;
+}
+
+.terminal {
+  max-width: 720px;
+  margin: 0 auto;
+  background: var(--surface-dark-2);
+  border: 1px solid var(--border-dark-2);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  font-family: var(--mono);
+  color: var(--ink-on-dark); /* #F8FAFC on #273449 = 12.0:1 ✓ WCAG AA */
+}
+
+.terminal__chrome {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-dark-2);
+  background: var(--bg-dark);
+}
+
+.terminal__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.terminal__dot--red { background: #FF5F57; }
+.terminal__dot--yellow { background: #FEBC2E; }
+.terminal__dot--green { background: #28C840; }
+
+.terminal__title {
+  flex: 1;
+  text-align: center;
+  font-size: 12px;
+  color: var(--ink-on-dark-muted); /* #94A3B8 on #0F172A = 5.9:1 ✓ WCAG AA */
+  user-select: none;
+}
+
+.terminal__body {
+  padding: 20px 24px;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.terminal__line {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.terminal__line--output {
+  color: var(--ink-on-dark-muted); /* #94A3B8 on #273449 = 4.9:1 ✓ WCAG AA */
+}
+
+.terminal__line--hint {
+  color: var(--ink-on-dark-muted); /* #94A3B8 on #273449 = 4.9:1 ✓ WCAG AA */
+  font-style: italic;
+}
+
+.terminal__prompt {
+  /* #3B82F6 on #273449 = 3.4:1 — passes AA for large text/UI
+     (3:1) but not normal text (4.5:1). Single decorative "$"
+     character, part of repeated visual pattern, no critical
+     information conveyed. Design intent accepted over strict
+     compliance. */
+  color: var(--accent);
+  margin-right: 12px;
+  user-select: none;
+}
+
+.terminal__command {
+  color: var(--ink-on-dark);
+}
+
+.terminal__link {
+  display: inline-block;
+  color: var(--accent);
+  text-decoration: none;
+  margin-right: 16px;
+  padding: 2px 4px;
+  border-radius: 4px;
+  transition: background 150ms ease;
+}
+
+.terminal__link:hover,
+.terminal__link:focus-visible {
+  background: rgba(59, 130, 246, 0.12);
+  color: var(--ink-on-dark);
+}
+
+.terminal__link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.terminal__input-line {
+  display: flex;
+  align-items: center;
+  padding: 8px 24px 20px;
+  gap: 12px;
+}
+
+.terminal__input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--ink-on-dark);
+  font-family: inherit;
+  font-size: 14px;
+  padding: 0;
+  caret-color: var(--accent);
+}
+
+.terminal__cursor {
+  width: 8px;
+  height: 16px;
+  background: var(--ink-on-dark);
+  animation: terminal-blink 1s step-end infinite;
+}
+
+.terminal__input:focus ~ .terminal__cursor {
+  display: none;
+}
+
+@keyframes terminal-blink {
+  50% { opacity: 0; }
+}
+
+@media (max-width: 640px) {
+  .terminal__body {
+    padding: 16px 18px;
+    font-size: 13px;
+  }
+
+  .terminal__link {
+    margin-right: 12px;
+  }
+
+  .terminal__input-line {
+    padding: 8px 18px 16px;
+  }
+}

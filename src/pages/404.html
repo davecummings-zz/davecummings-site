@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="{{LANG}}">
+<head>
+{{HEAD}}
+</head>
+<body>
+
+{{HEADER}}
+
+<main>
+
+  <section class="page-404">
+    <div class="container">
+      <div class="terminal" aria-label="404 error page terminal" role="region">
+        <div class="terminal__chrome" aria-hidden="true">
+          <span class="terminal__dot terminal__dot--red"></span>
+          <span class="terminal__dot terminal__dot--yellow"></span>
+          <span class="terminal__dot terminal__dot--green"></span>
+          <span class="terminal__title">davecummings.co — 404</span>
+        </div>
+        <div class="terminal__body" id="terminal-body" aria-live="polite">
+          <!-- Initial content pre-rendered so it's accessible without JS -->
+          <div class="terminal__line">
+            <span class="terminal__prompt">$</span>
+            <span class="terminal__command">cd /this/page</span>
+          </div>
+          <div class="terminal__line terminal__line--output">
+            bash: no such file or directory
+          </div>
+          <div class="terminal__line">
+            <span class="terminal__prompt">$</span>
+            <span class="terminal__command">ls</span>
+          </div>
+          <div class="terminal__line terminal__line--output">
+            <a href="/" class="terminal__link">home/</a>
+            <a href="/about/" class="terminal__link">about/</a>
+            <a href="/services/" class="terminal__link">services/</a>
+            <a href="/contact/" class="terminal__link">contact/</a>
+          </div>
+          <div class="terminal__line terminal__line--hint">
+            # try typing "help" or "cd home"
+          </div>
+        </div>
+        <div class="terminal__input-line">
+          <span class="terminal__prompt" aria-hidden="true">$</span>
+          <input
+            type="text"
+            id="terminal-input"
+            class="terminal__input"
+            autocomplete="off"
+            autocapitalize="off"
+            autocorrect="off"
+            spellcheck="false"
+            aria-label="Terminal command input"
+          />
+          <span class="terminal__cursor" aria-hidden="true"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+  (function () {
+    var body = document.getElementById('terminal-body');
+    var input = document.getElementById('terminal-input');
+    if (!body || !input) return;
+
+    var history = [];
+    var historyIndex = -1;
+
+    var PAGE_LINKS = [
+      { href: '/', label: 'home/' },
+      { href: '/about/', label: 'about/' },
+      { href: '/services/', label: 'services/' },
+      { href: '/contact/', label: 'contact/' }
+    ];
+
+    function addLine(className) {
+      var line = document.createElement('div');
+      line.className = 'terminal__line' + (className ? ' ' + className : '');
+      body.appendChild(line);
+      return line;
+    }
+
+    function echoCommand(text) {
+      var line = addLine();
+      var prompt = document.createElement('span');
+      prompt.className = 'terminal__prompt';
+      prompt.textContent = '$';
+      var command = document.createElement('span');
+      command.className = 'terminal__command';
+      command.textContent = text;
+      line.appendChild(prompt);
+      line.appendChild(command);
+    }
+
+    function printOutput(text) {
+      var line = addLine('terminal__line--output');
+      line.textContent = text;
+    }
+
+    function printLsOutput() {
+      var line = addLine('terminal__line--output');
+      PAGE_LINKS.forEach(function (page) {
+        var a = document.createElement('a');
+        a.href = page.href;
+        a.className = 'terminal__link';
+        a.textContent = page.label;
+        line.appendChild(a);
+      });
+    }
+
+    function printHelp() {
+      printOutput('available commands: ls, cd [page], help, clear, whoami');
+    }
+
+    function clearTerminal() {
+      body.innerHTML = '';
+    }
+
+    function scrollToBottom() {
+      body.scrollTop = body.scrollHeight;
+    }
+
+    function runCommand(raw) {
+      var trimmed = raw.trim();
+      var normalized = trimmed.toLowerCase();
+
+      if (trimmed !== '') {
+        echoCommand(trimmed);
+      } else {
+        addLine();
+        return;
+      }
+
+      switch (normalized) {
+        case 'ls':
+        case 'dir':
+          printLsOutput();
+          break;
+        case 'cd home':
+          window.location.href = '/';
+          break;
+        case 'cd about':
+          window.location.href = '/about/';
+          break;
+        case 'cd services':
+          window.location.href = '/services/';
+          break;
+        case 'cd contact':
+          window.location.href = '/contact/';
+          break;
+        case 'help':
+          printHelp();
+          break;
+        case 'clear':
+          clearTerminal();
+          break;
+        case 'whoami':
+          printOutput('dave');
+          break;
+        default:
+          printOutput('command not found: ' + trimmed);
+      }
+    }
+
+    input.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') {
+        var value = input.value;
+        if (value.trim() !== '') {
+          history.push(value);
+        }
+        historyIndex = history.length;
+        runCommand(value);
+        input.value = '';
+        scrollToBottom();
+      } else if (e.key === 'ArrowUp') {
+        if (history.length === 0) return;
+        e.preventDefault();
+        historyIndex = Math.max(0, historyIndex - 1);
+        input.value = history[historyIndex] || '';
+      } else if (e.key === 'ArrowDown') {
+        if (history.length === 0) return;
+        e.preventDefault();
+        historyIndex = Math.min(history.length, historyIndex + 1);
+        input.value = history[historyIndex] || '';
+      }
+    });
+
+    input.focus({ preventScroll: true });
+  })();
+</script>
+
+{{FOOTER}}
+
+</body>
+</html>

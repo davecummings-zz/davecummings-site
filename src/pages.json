@@ -197,5 +197,16 @@
     "dateModified": null,
     "articleHeadline": "The maintainability tax: what 'cheap' websites actually cost over five years",
     "articleDescription": "A $500 builder site looks like a bargain on day one. Five years and three plugin migrations later, the math looks different."
+  },
+  {
+    "path": "404.html",
+    "title": "Page not found — Dave Cummings",
+    "description": "The page you were looking for doesn't exist. Head back to the homepage or try one of the other pages.",
+    "canonical": null,
+    "ogImage": null,
+    "schemaType": null,
+    "indexed": false,
+    "hreflang_es": null,
+    "lang": "en"
   }
 ]

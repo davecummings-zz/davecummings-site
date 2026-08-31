@@ -162,6 +162,12 @@ function buildSchemaJsonLd(page) {
 
 function buildHead(template, page) {
   const robots = page.indexed ? 'index, follow' : 'noindex, nofollow';
+  const canonicalTag = page.canonical
+    ? `<link rel="canonical" href="${page.canonical}">`
+    : '';
+  const ogUrlMeta = page.canonical
+    ? `<meta property="og:url" content="${page.canonical}">`
+    : '';
   const ogImageMeta = page.ogImage
     ? `\n<meta property="og:image" content="${page.ogImage}">`
     : '';
@@ -170,8 +176,9 @@ function buildHead(template, page) {
   return template
     .replace(/\{\{TITLE\}\}/g, page.title)
     .replace(/\{\{DESCRIPTION\}\}/g, page.description)
-    .replace(/\{\{CANONICAL\}\}/g, page.canonical)
+    .replace(/\{\{CANONICAL_TAG\}\}/g, canonicalTag)
     .replace(/\{\{ROBOTS\}\}/g, robots)
+    .replace(/\{\{OG_URL_META\}\}/g, ogUrlMeta)
     .replace(/\{\{OG_IMAGE_META\}\}/g, ogImageMeta)
     .replace(/\{\{SCHEMA_JSONLD\}\}/g, schemaJsonLd);
 }
