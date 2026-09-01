@@ -97,7 +97,7 @@ function buildSchemaJsonLd(page) {
       provider: {
         '@type': 'Person',
         name: 'Dave Cummings',
-        url: 'https://davecummings.co/',
+        url: 'https://www.davecummings.co/',
         sameAs: ['https://www.linkedin.com/in/david-cummings-35191612/']
       },
       areaServed: {
@@ -121,7 +121,7 @@ function buildSchemaJsonLd(page) {
       author: {
         '@type': 'Person',
         name: 'Dave Cummings',
-        url: 'https://davecummings.co/about/',
+        url: 'https://www.davecummings.co/about/',
         sameAs: ['https://www.linkedin.com/in/david-cummings-35191612/']
       },
       publisher: {
@@ -225,7 +225,7 @@ function buildRobots() {
   return `User-agent: *
 Allow: /
 
-Sitemap: https://davecummings.co/sitemap.xml
+Sitemap: https://www.davecummings.co/sitemap.xml
 `;
 }
 
