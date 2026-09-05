@@ -1,8 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="6" fill="#0F172A"/>
-  <text x="16" y="22" text-anchor="middle"
-        font-family="system-ui, -apple-system, sans-serif"
-        font-weight="700"
-        font-size="16"
-        fill="#3B82F6">DC</text>
+  <rect width="32" height="32" rx="6" fill="#3B82F6"/>
+  <path d="M22 20a8 8 0 0 1 -10 -12 a10 10 0 1 0 10 12 z"
+        fill="#FFFFFF"/>
 </svg>

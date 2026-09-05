@@ -1,0 +1,35 @@
+# Dave Cummings
+
+> Frontend engineering and solutions leader. Custom websites,
+> performance, SEO, and AI visibility for small businesses.
+
+Dave Cummings has been building websites since 2008, mostly in
+ecommerce. Now shipping fast, modern sites with modern AI tooling.
+Based in Central Texas.
+
+## About
+
+- [About Dave Cummings](https://www.davecummings.co/about/): 17
+  years working in tech, mostly ecommerce. React, Next.js,
+  TypeScript, and Vercel. AI tooling makes it possible to ship in
+  weeks now instead of months.
+
+## Services
+
+- [Custom Website Build](https://www.davecummings.co/services/custom-website-build/):
+  Custom websites built from scratch. Fast, accessible, SEO-ready.
+  Modern tooling, no theme files. Fixed price quoted after a
+  discovery call.
+- [AI Visibility Audit](https://www.davecummings.co/services/ai-visibility-audit/):
+  Six-dimension analysis of how a business shows up in AI-powered
+  search (Claude, ChatGPT, Gemini, Perplexity). $350 flat,
+  delivered in 3 business days.
+- [All Services](https://www.davecummings.co/services/): Custom
+  builds, AI Visibility Audits, full website audits, and monthly
+  SEO retainers.
+
+## Contact
+
+- [Get in touch](https://www.davecummings.co/contact/):
+  dave@davecummings.co. All engagements start with a free
+  20-minute call.

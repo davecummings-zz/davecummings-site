@@ -285,6 +285,12 @@ function main() {
   writeFile(path.join(DIST, 'sitemap.xml'), buildSitemap(pages));
   writeFile(path.join(DIST, 'robots.txt'), buildRobots());
 
+  // Copy llms.txt
+  const llmsPath = path.join(SRC, 'llms.txt');
+  if (fs.existsSync(llmsPath)) {
+    copyFile(llmsPath, path.join(DIST, 'llms.txt'));
+  }
+
   console.log(`\nBuild complete. ${pages.length} page(s) built.\n`);
 }
 
